@@ -112,18 +112,47 @@
         .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--primary), transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
         /* ABOUT */
-        .about { padding: 7rem 0; background: var(--white); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about { padding: 6rem 0; background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
         .about-image-block { position: relative; }
-        .about-img { width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius-lg); }
-        .about-exp-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--primary); color: var(--white); padding: 1.5rem; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-lg); }
-        .exp-num { display: block; font-family: var(--font-display); font-size: 3rem; line-height: 1; }
+        .about-img { 
+            width: 100%; 
+            height: 520px; 
+            object-fit: cover; 
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .about-exp-badge { 
+            position: absolute; 
+            bottom: -1.5rem; 
+            right: -1.5rem; 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 1.75rem 2rem; 
+            border-radius: var(--radius-lg); 
+            text-align: center; 
+            box-shadow: var(--shadow-lg); 
+        }
+        .exp-num { display: block; font-family: var(--font-display); font-size: 3.5rem; line-height: 1; }
         .exp-txt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
         .about-text h2 { margin-bottom: 1.5rem; }
         .about-text p { color: var(--text-dark-muted); margin-bottom: 1rem; line-height: 1.8; }
         .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 2rem 0; }
         .feature { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 0.9rem; }
         .feature-icon { width: 28px; height: 28px; background: rgba(212,56,44,0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0; }
+        
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-image-block { order: -1; }
+            .about-img { height: 400px; }
+        }
+        @media (max-width: 768px) {
+            .about { padding: 4rem 0; }
+            .about-img { height: 320px; }
+            .about-exp-badge { bottom: -1rem; right: 1rem; padding: 1.25rem 1.5rem; }
+            .exp-num { font-size: 2.5rem; }
+            .about-features { grid-template-columns: 1fr; }
+        }
 
         /* SERVICES */
         .services { padding: 7rem 0; background: var(--light); }
@@ -778,7 +807,7 @@
 <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content">
-        <div class="hero-badge">5.0 ★ Google Rating · 424 Reviews</div>
+        <div class="hero-badge" id="heroBadge">5.0 ★ Google Rating · 425 Reviews</div>
         <h1>Hamilton's Most Trusted<br><span class="accent">Auto Repair Shop</span></h1>
         <p class="hero-sub">Reliable, budget-friendly automotive repairs for all makes and models. Fully licensed technician. All work guaranteed. Serving Hamilton and the GTA.</p>
         <div class="hero-actions">
@@ -787,17 +816,17 @@
         </div>
         <div class="hero-trust">
             <div class="trust-item">
-                <span class="trust-number" data-target="424" data-suffix="+">0</span>
+                <span class="trust-number" id="statReviews" data-suffix="+">0</span>
                 <span class="trust-label">Google Reviews</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-                <span class="trust-number" data-target="5.0" data-suffix="★" data-decimal="true">0</span>
+                <span class="trust-number" id="statRating" data-suffix="★" data-decimal="true">0</span>
                 <span class="trust-label">Perfect Rating</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-                <span class="trust-number" data-target="7" data-suffix="+">0</span>
+                <span class="trust-number" id="statYears" data-suffix="+">0</span>
                 <span class="trust-label">Years Serving Hamilton</span>
             </div>
         </div>
@@ -810,9 +839,9 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-image-block img-reveal anim-element">
-                <img class="about-img anim-zoom-parallax" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80" alt="Martin's Automotive Centre shop">
+                <img class="about-img" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1000&q=80" alt="Martin's Automotive Centre shop">
                 <div class="about-exp-badge anim-pop anim-element">
-                    <span class="exp-num">5.0</span>
+                    <span class="exp-num" id="aboutRating">5.0</span>
                     <span class="exp-txt">Perfect<br>Google Rating</span>
                 </div>
             </div>
@@ -976,7 +1005,7 @@
         <div class="ba-container">
             <div class="anim-slide-left anim-element">
                 <div class="ba-slider anim-glow" id="baSlider1">
-                    <img class="ba-after" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="New brake rotors">
+                    <img class="ba-after" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="New brake rotors">
                     <img class="ba-before" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Worn brake rotors">
                     <div class="ba-handle"></div>
                     <span class="ba-label before">Before</span>
@@ -1008,7 +1037,7 @@
 <section class="testimonials">
     <div class="container">
         <div class="section-header centered anim-ready anim-element">
-            <span class="section-label">424+ Google Reviews</span>
+            <span class="section-label" id="testimonialLabel">425+ Google Reviews</span>
             <h2>What Customers <span class="accent">Say</span></h2>
         </div>
         <div class="testimonial-grid anim-stagger anim-element">
@@ -1191,6 +1220,28 @@
 </div>
 
 <script>
+// ╔════════════════════════════════════════════════════════════════════════════╗
+// ║  MARTIN'S AUTOMOTIVE - SITE CONFIGURATION                                  ║
+// ║  Update these values to match Google Reviews / business info               ║
+// ╚════════════════════════════════════════════════════════════════════════════╝
+
+const SITE_CONFIG = {
+    // Google Reviews Stats (update these when reviews change)
+    googleReviews: 425,      // Total number of Google reviews
+    googleRating: 5.0,       // Star rating (e.g., 4.9, 5.0)
+    yearsInBusiness: 7,      // Years serving Hamilton (since 2018)
+    
+    // Business Hours (24-hour format)
+    hours: {
+        weekdays: { open: 7.5, close: 17.5 },  // 7:30am - 5:30pm
+        saturday: null,  // null = closed
+        sunday: null     // null = closed
+    },
+    
+    // Contact Info
+    phone: '(905) 923-9064'
+};
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
@@ -1267,14 +1318,40 @@ function updateShopStatus() {
 updateShopStatus();
 setInterval(updateShopStatus, 60000); // Update every minute
 
+// ===== APPLY CONFIG TO PAGE =====
+function applyConfig() {
+    // Hero badge
+    const heroBadge = document.getElementById('heroBadge');
+    if (heroBadge) {
+        heroBadge.textContent = `${SITE_CONFIG.googleRating} ★ Google Rating · ${SITE_CONFIG.googleReviews} Reviews`;
+    }
+    
+    // About section rating
+    const aboutRating = document.getElementById('aboutRating');
+    if (aboutRating) {
+        aboutRating.textContent = SITE_CONFIG.googleRating;
+    }
+    
+    // Testimonials label
+    const testimonialLabel = document.getElementById('testimonialLabel');
+    if (testimonialLabel) {
+        testimonialLabel.textContent = `${SITE_CONFIG.googleReviews}+ Google Reviews`;
+    }
+}
+applyConfig();
+
 // ===== ENHANCEMENT 2: ANIMATED COUNTERS =====
 function animateCounters() {
-    const counters = document.querySelectorAll('.trust-number[data-target]');
+    const stats = [
+        { id: 'statReviews', target: SITE_CONFIG.googleReviews, suffix: '+', decimal: false },
+        { id: 'statRating', target: SITE_CONFIG.googleRating, suffix: '★', decimal: true },
+        { id: 'statYears', target: SITE_CONFIG.yearsInBusiness, suffix: '+', decimal: false }
+    ];
     
-    counters.forEach(counter => {
-        const target = parseFloat(counter.getAttribute('data-target'));
-        const suffix = counter.getAttribute('data-suffix') || '';
-        const isDecimal = counter.getAttribute('data-decimal') === 'true';
+    stats.forEach(stat => {
+        const el = document.getElementById(stat.id);
+        if (!el) return;
+        
         const duration = 2000;
         const startTime = performance.now();
         
@@ -1282,12 +1359,12 @@ function animateCounters() {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const easeOut = 1 - Math.pow(1 - progress, 3);
-            const current = target * easeOut;
+            const current = stat.target * easeOut;
             
-            if (isDecimal) {
-                counter.textContent = current.toFixed(1) + suffix;
+            if (stat.decimal) {
+                el.textContent = current.toFixed(1) + stat.suffix;
             } else {
-                counter.textContent = Math.floor(current) + suffix;
+                el.textContent = Math.floor(current) + stat.suffix;
             }
             
             if (progress < 1) {
