@@ -6,14 +6,14 @@
     <title>ShopLaunch | Digital Solutions for Auto Shops</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* ============ VARIABLES ============ */
         :root {
-            --primary: #F43F5E;
-            --primary-dark: #E11D48;
-            --primary-glow: rgba(244, 63, 94, 0.15);
-            --secondary: #FB7185;
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-glow: rgba(14, 165, 233, 0.15);
+            --secondary: #38BDF8;
             --dark-1: #0A0A0B;
             --dark-2: #111113;
             --dark-3: #18181B;
@@ -24,17 +24,18 @@
             --text-dim: #71717A;
             --border: rgba(255,255,255,0.08);
             --border-light: rgba(255,255,255,0.12);
-            --gradient-1: linear-gradient(135deg, #F43F5E 0%, #FB7185 50%, #FDA4AF 100%);
+            --gradient-1: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 50%, #7DD3FC 100%);
             --gradient-2: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
-            --shadow-glow: 0 0 60px rgba(244, 63, 94, 0.15);
+            --shadow-glow: 0 0 60px rgba(14, 165, 233, 0.15);
             --shadow-card: 0 4px 40px rgba(0,0,0,0.4);
             --radius: 12px;
             --radius-lg: 20px;
             --radius-xl: 32px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'Space Grotesk', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
+            /* Apple-like system font stack */
+            --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', monospace;
         }
 
         /* ============ RESET ============ */
@@ -114,7 +115,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 255, 148, 0.3);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.3);
         }
         .btn-outline {
             background: transparent;
@@ -239,10 +240,33 @@
             overflow: hidden;
             padding: 8rem 0 6rem;
         }
-        .hero-bg {
+        .hero-video-container {
             position: absolute;
             inset: 0;
             z-index: 0;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .hero-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.75) 50%, rgba(14,165,233,0.1) 100%);
+            z-index: 1;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
         }
         .hero-bg::before {
             content: '';
@@ -251,7 +275,7 @@
             right: -20%;
             width: 80%;
             height: 150%;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 148, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.08) 0%, transparent 60%);
             animation: pulse 8s ease-in-out infinite;
         }
         .hero-bg::after {
@@ -275,10 +299,11 @@
                 linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            z-index: 3;
         }
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 4;
             max-width: 800px;
         }
         .hero-badge {
@@ -385,10 +410,26 @@
             padding: 8rem 0;
             background: var(--dark-1);
             position: relative;
+            overflow: hidden;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1200&q=80') center/cover no-repeat;
+            opacity: 0.06;
+            mask-image: linear-gradient(to left, black 0%, transparent 80%);
         }
         .services-header {
             max-width: 600px;
-            margin-bottom: 4rem;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .services-header .section-label {
+            justify-content: center;
         }
         .services-header p {
             color: var(--text-muted);
@@ -436,7 +477,7 @@
             width: 56px;
             height: 56px;
             background: var(--primary-glow);
-            border: 1px solid rgba(0, 255, 148, 0.2);
+            border: 1px solid rgba(14, 165, 233, 0.2);
             border-radius: var(--radius);
             display: flex;
             align-items: center;
@@ -469,6 +510,19 @@
         .process {
             padding: 8rem 0;
             background: var(--dark-2);
+            position: relative;
+            overflow: hidden;
+        }
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1603553329474-99f95f35394f?w=1200&q=80') center/cover no-repeat;
+            opacity: 0.04;
+            mask-image: linear-gradient(to right, black 0%, transparent 80%);
         }
         .process-header {
             text-align: center;
@@ -590,6 +644,15 @@
             background: var(--dark-3);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .results::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.04;
         }
         .results-grid {
             display: grid;
@@ -604,7 +667,7 @@
             line-height: 1;
             margin-bottom: 0.5rem;
         }
-        .result-num.gradient { background: var(--gradient-1); background-clip: text; -webkit-text-fill-color: transparent; }
+        .result-num.gradient { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .result-label {
             font-size: 0.9rem;
             color: var(--text-muted);
@@ -740,10 +803,18 @@
             position: relative;
             overflow: hidden;
         }
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.08;
+        }
         .cta-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 148, 0.06) 0%, transparent 50%);
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+            box-shadow: 0 0 60px rgba(14, 165, 233, 0.2);
         }
         .cta-content {
             position: relative;
@@ -946,6 +1017,173 @@
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
+        /* ===== APPLE-STYLE SCROLL ANIMATIONS ===== */
+        
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            z-index: 9999;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
+        }
+        
+        /* Blur in - great for headlines */
+        .anim-blur-in {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-blur-in.in-view {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+        
+        /* Fade up */
+        .anim-fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-fade-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Slide from left */
+        .anim-slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-slide-left.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Slide from right */
+        .anim-slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-slide-right.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Scale in */
+        .anim-scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-scale-in.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Staggered children */
+        .anim-stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-stagger.in-view > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+        
+        /* 3D tilt */
+        .anim-tilt {
+            opacity: 0;
+            transform: perspective(1000px) rotateX(10deg) translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-tilt.in-view {
+            opacity: 1;
+            transform: perspective(1000px) rotateX(0) translateY(0);
+        }
+        
+        /* Rotate in */
+        .anim-rotate-in {
+            opacity: 0;
+            transform: rotate(-8deg) translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-rotate-in.in-view {
+            opacity: 1;
+            transform: rotate(0) translateY(0);
+        }
+        
+        /* Pop effect */
+        .anim-pop {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .anim-pop.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Glow effect */
+        .anim-glow.in-view {
+            box-shadow: 0 0 60px rgba(14, 165, 233, 0.2);
+        }
+        
+        /* Counter animation for stats */
+        .anim-counter {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .anim-counter.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Section header animation */
+        .section-anim .section-label {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .section-anim h2 {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+        }
+        .section-anim p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+        .section-anim.in-view .section-label,
+        .section-anim.in-view h2,
+        .section-anim.in-view p {
+            opacity: 1;
+            transform: translate(0);
+        }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: 1fr; }
@@ -998,6 +1236,9 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -1021,6 +1262,12 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+    <div class="hero-video-container">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80">
+            <source src="https://videos.pexels.com/video-files/4489841/4489841-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+    </div>
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="container">
@@ -1030,7 +1277,7 @@
                 Now serving auto shops across North America
             </div>
             <h1>Digital Solutions Built for <span class="gradient-text">Auto Shops</span></h1>
-            <p class="hero-sub">Websites, inventory systems, vehicle wraps, and PPI tools — all designed by people who understand the automotive industry.</p>
+            <p class="hero-sub">Websites, inventory systems, vehicle wraps, and PPF services — all designed by people who understand the automotive industry.</p>
             <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
                 <a href="#portfolio" class="btn btn-outline btn-lg">View Our Work</a>
@@ -1070,13 +1317,13 @@
 <!-- SERVICES -->
 <section class="services" id="services">
     <div class="container">
-        <div class="services-header">
+        <div class="services-header section-anim anim-element">
             <span class="section-label">What We Do</span>
             <h2>End-to-End Digital Solutions</h2>
             <p>Everything your auto shop needs to dominate online — from stunning websites to powerful backend systems.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card featured">
+        <div class="services-grid anim-stagger anim-element">
+            <div class="service-card featured anim-tilt">
                 <div class="svc-icon">🌐</div>
                 <h3>Website Design & Development</h3>
                 <p>Custom-built websites that convert visitors into booked appointments. Optimized for mobile, SEO-ready, and designed specifically for the automotive industry.</p>
@@ -1088,7 +1335,7 @@
                     <span class="svc-tag">Fast Hosting</span>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon">📦</div>
                 <h3>Inventory Management</h3>
                 <p>Custom systems to track parts, manage suppliers, and streamline your shop's operations. Never lose track of inventory again.</p>
@@ -1098,7 +1345,7 @@
                     <span class="svc-tag">Reporting</span>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon">🎨</div>
                 <h3>Vehicle Wraps & Graphics</h3>
                 <p>Eye-catching wrap designs and color change visualizers. Help customers see their dream car before committing.</p>
@@ -1108,14 +1355,24 @@
                     <span class="svc-tag">PPF Visualizer</span>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon">🔍</div>
-                <h3>PPI (Pre-Purchase Inspection) Tools</h3>
-                <p>Digital inspection forms, automated reports, and customer-facing dashboards for transparent vehicle assessments.</p>
+                <h3>PPF (Paint Protection Film)</h3>
+                <p>Premium paint protection film installation services. Crystal-clear film that shields your vehicle from chips, scratches, and road debris.</p>
                 <div class="svc-features">
-                    <span class="svc-tag">Digital Forms</span>
-                    <span class="svc-tag">Auto Reports</span>
-                    <span class="svc-tag">Customer Portal</span>
+                    <span class="svc-tag">Self-Healing</span>
+                    <span class="svc-tag">UV Protection</span>
+                    <span class="svc-tag">Custom Fit</span>
+                </div>
+            </div>
+            <div class="service-card anim-tilt">
+                <div class="svc-icon">✨</div>
+                <h3>Ceramic Coating</h3>
+                <p>Professional-grade ceramic coating services that provide long-lasting protection and a brilliant, hydrophobic shine for your vehicle.</p>
+                <div class="svc-features">
+                    <span class="svc-tag">9H Hardness</span>
+                    <span class="svc-tag">Hydrophobic</span>
+                    <span class="svc-tag">5+ Year Protection</span>
                 </div>
             </div>
         </div>
@@ -1125,28 +1382,28 @@
 <!-- PROCESS -->
 <section class="process">
     <div class="container">
-        <div class="process-header">
+        <div class="process-header section-anim anim-element">
             <span class="section-label">How It Works</span>
             <h2>From Idea to Launch</h2>
             <p>A simple, transparent process designed to get your shop online fast.</p>
         </div>
-        <div class="process-grid">
-            <div class="process-step">
+        <div class="process-grid anim-stagger anim-element">
+            <div class="process-step anim-pop">
                 <div class="step-num">1</div>
                 <h4>Discovery Call</h4>
                 <p>We learn about your shop, goals, and what you need to succeed online.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step anim-pop">
                 <div class="step-num">2</div>
                 <h4>Strategy & Design</h4>
                 <p>Custom mockups and a clear roadmap tailored to your business.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step anim-pop">
                 <div class="step-num">3</div>
                 <h4>Build & Refine</h4>
                 <p>We build, you review. Unlimited revisions until it's perfect.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step anim-pop">
                 <div class="step-num">4</div>
                 <h4>Launch & Support</h4>
                 <p>Go live with ongoing support to keep everything running smoothly.</p>
@@ -1158,16 +1415,16 @@
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
     <div class="container">
-        <div class="portfolio-header">
+        <div class="portfolio-header section-anim anim-element">
             <div>
                 <span class="section-label">Our Work</span>
                 <h2>Recent Projects</h2>
                 <p>Real results for real auto shops across North America.</p>
             </div>
-            <a href="#contact" class="btn btn-outline">Start Your Project</a>
+            <a href="#contact" class="btn btn-outline anim-fade-up">Start Your Project</a>
         </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
+        <div class="portfolio-grid anim-stagger anim-element">
+            <div class="portfolio-item anim-scale-in">
                 <span class="portfolio-tag">Website</span>
                 <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80" alt="Martin's Automotive">
                 <div class="portfolio-overlay">
@@ -1175,7 +1432,7 @@
                     <p>Full website redesign • Hamilton, ON</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item anim-scale-in">
                 <span class="portfolio-tag">Website</span>
                 <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Hamilton Auto Pro">
                 <div class="portfolio-overlay">
@@ -1183,7 +1440,7 @@
                     <p>Custom website build • Hamilton, ON</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item anim-scale-in">
                 <span class="portfolio-tag">Wraps</span>
                 <img src="https://images.unsplash.com/photo-1603553329474-99f95f35394f?w=600&q=80" alt="Elite Wraps">
                 <div class="portfolio-overlay">
@@ -1191,15 +1448,15 @@
                     <p>Wrap visualizer + website • Toronto, ON</p>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <span class="portfolio-tag">PPI System</span>
+            <div class="portfolio-item anim-scale-in">
+                <span class="portfolio-tag">PPF Services</span>
                 <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80" alt="Precision Auto">
                 <div class="portfolio-overlay">
                     <h4>Precision Auto Inspections</h4>
-                    <p>Digital PPI system • Calgary, AB</p>
+                    <p>PPF installation showcase • Calgary, AB</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item anim-scale-in">
                 <span class="portfolio-tag">Inventory</span>
                 <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="AutoCare Plus">
                 <div class="portfolio-overlay">
@@ -1207,7 +1464,7 @@
                     <p>Inventory management system • Denver, CO</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item anim-scale-in">
                 <span class="portfolio-tag">Website</span>
                 <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Sunset Motors">
                 <div class="portfolio-overlay">
@@ -1222,20 +1479,20 @@
 <!-- RESULTS -->
 <section class="results" id="results">
     <div class="container">
-        <div class="results-grid">
-            <div class="result-item">
+        <div class="results-grid anim-stagger anim-element">
+            <div class="result-item anim-counter">
                 <div class="result-num gradient">50+</div>
                 <div class="result-label">Shops Launched</div>
             </div>
-            <div class="result-item">
+            <div class="result-item anim-counter">
                 <div class="result-num gradient">3x</div>
                 <div class="result-label">Avg. Lead Increase</div>
             </div>
-            <div class="result-item">
+            <div class="result-item anim-counter">
                 <div class="result-num gradient">2 Weeks</div>
                 <div class="result-label">Avg. Turnaround</div>
             </div>
-            <div class="result-item">
+            <div class="result-item anim-counter">
                 <div class="result-num gradient">100%</div>
                 <div class="result-label">Satisfaction Rate</div>
             </div>
@@ -1246,13 +1503,13 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials">
     <div class="container">
-        <div class="testimonials-header">
+        <div class="testimonials-header section-anim anim-element">
             <span class="section-label">Testimonials</span>
             <h2>What Shop Owners Say</h2>
             <p>Don't just take our word for it — hear from the shops we've helped grow.</p>
         </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
+        <div class="testimonial-grid anim-stagger anim-element">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="t-stars">★★★★★</div>
                 <p>"Finally, a team that actually understands auto shops. They built exactly what we needed — no fluff, just results. Our leads tripled in the first month."</p>
                 <div class="t-author">
@@ -1260,7 +1517,7 @@
                     <div><strong>Martin S.</strong><span>Martin's Automotive • Hamilton, ON</span></div>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="t-stars">★★★★★</div>
                 <p>"The inventory system they built us is a game changer. We went from spreadsheets to a full dashboard in 2 weeks. Couldn't be happier."</p>
                 <div class="t-author">
@@ -1268,7 +1525,7 @@
                     <div><strong>James R.</strong><span>AutoCare Plus • Denver, CO</span></div>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="t-stars">★★★★★</div>
                 <p>"Our new wrap visualizer lets customers see their car before they commit. Closing rate went up 40%. Worth every penny."</p>
                 <div class="t-author">
@@ -1283,29 +1540,29 @@
 <!-- TEAM -->
 <section class="team" id="team">
     <div class="container">
-        <div class="team-header">
+        <div class="team-header section-anim anim-element">
             <span class="section-label">Our Team</span>
             <h2>The People Behind ShopLaunch</h2>
             <p>A small, focused team with deep expertise in both tech and the automotive industry.</p>
         </div>
-        <div class="team-grid">
-            <div class="team-card">
+        <div class="team-grid anim-stagger anim-element">
+            <div class="team-card anim-tilt">
                 <div class="team-avatar">👨‍💻</div>
                 <h4>Founder</h4>
                 <div class="team-role">Strategy & Development</div>
                 <p>Building digital solutions for auto shops with a focus on real results.</p>
             </div>
-            <div class="team-card">
+            <div class="team-card anim-tilt">
                 <div class="team-avatar">🎨</div>
                 <h4>Lead Designer</h4>
                 <div class="team-role">UI/UX Design</div>
                 <p>Creating stunning, conversion-focused designs that stand out.</p>
             </div>
-            <div class="team-card">
+            <div class="team-card anim-tilt">
                 <div class="team-avatar">⚙️</div>
                 <h4>Systems Lead</h4>
                 <div class="team-role">Backend & Integrations</div>
-                <p>Building robust inventory and PPI systems that just work.</p>
+                <p>Building robust inventory systems and coordinating PPF services.</p>
             </div>
         </div>
     </div>
@@ -1315,11 +1572,11 @@
 <section class="cta">
     <div class="cta-bg"></div>
     <div class="container">
-        <div class="cta-content">
+        <div class="cta-content section-anim anim-element">
             <span class="section-label">Ready to Launch?</span>
             <h2>Let's Build Something <span class="gradient-text">Powerful</span></h2>
             <p>Book a free strategy call and see how we can help your shop dominate online.</p>
-            <div class="cta-actions">
+            <div class="cta-actions anim-fade-up anim-element" style="transition-delay: 0.2s;">
                 <a href="#contact" class="btn btn-primary btn-lg">Book Free Consultation</a>
                 <a href="tel:+12269726493" class="btn btn-outline btn-lg">📞 (226) 972-6493</a>
             </div>
@@ -1331,14 +1588,14 @@
 <section class="contact" id="contact">
     <div class="container">
         <div class="contact-grid">
-            <div class="contact-info">
+            <div class="contact-info anim-slide-left anim-element">
                 <span class="section-label">Get In Touch</span>
                 <h2>Start Your Project</h2>
                 <p>Ready to take your shop online? Fill out the form and we'll get back to you within 24 hours with a custom quote and strategy.</p>
-                <div class="contact-methods">
+                <div class="contact-methods anim-stagger anim-element">
                     <div class="contact-method">
                         <div class="cm-icon">📧</div>
-                        <div><strong>Email</strong><a href="mailto:jaygaudani50062@gmail.com">jaygaudani50062@gmail.com</a></div>
+                        <div><strong>Email</strong><a href="/cdn-cgi/l/email-protection#3f555e46585e4a5b5e51560a0f0f090d7f58525e5653115c5052"><span class="__cf_email__" data-cfemail="e48e859d83859180858a8dd1d4d4d2d6a48389858d88ca878b89">[email&#160;protected]</span></a></div>
                     </div>
                     <div class="contact-method">
                         <div class="cm-icon">📞</div>
@@ -1354,7 +1611,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
+            <div class="contact-form anim-slide-right anim-element">
                 <h3>Request a Free Quote</h3>
                 <form id="contactForm">
                     <div class="form-row">
@@ -1388,7 +1645,7 @@
                             <option value="website">Website Design & Development</option>
                             <option value="inventory">Inventory Management System</option>
                             <option value="wraps">Vehicle Wraps & Graphics</option>
-                            <option value="ppi">PPI Tools</option>
+                            <option value="ppf">PPF Services</option>
                             <option value="multiple">Multiple Services</option>
                             <option value="other">Other</option>
                         </select>
@@ -1414,7 +1671,7 @@
                     <div class="logo-icon">S</div>
                     <div class="logo-text">Shop<span>Launch</span></div>
                 </a>
-                <p>Digital solutions built specifically for auto shops. Websites, inventory systems, wraps, and PPI tools — all from a team that understands your industry.</p>
+                <p>Digital solutions built specifically for auto shops. Websites, inventory systems, wraps, and PPF services — all from a team that understands your industry.</p>
             </div>
             <div>
                 <h4>Services</h4>
@@ -1422,7 +1679,7 @@
                     <li><a href="#services">Website Design</a></li>
                     <li><a href="#services">Inventory Systems</a></li>
                     <li><a href="#services">Vehicle Wraps</a></li>
-                    <li><a href="#services">PPI Tools</a></li>
+                    <li><a href="#services">PPF Services</a></li>
                 </ul>
             </div>
             <div>
@@ -1437,7 +1694,7 @@
             <div>
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="mailto:jaygaudani50062@gmail.com">jaygaudani50062@gmail.com</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#0e646f77696f7b6a6f60673b3e3e383c4e69636f6762206d6163"><span class="__cf_email__" data-cfemail="96fcf7eff1f7e3f2f7f8ffa3a6a6a0a4d6f1fbf7fffab8f5f9fb">jaygaudani50062@gmail.com</span></a></li>
                     <li><a href="tel:+12269726493">(226) 972-6493</a></li>
                     <li>Hamilton, ON</li>
                     <li>Serving North America</li>
@@ -1455,7 +1712,7 @@
     </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Navbar scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -1476,17 +1733,32 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-// Scroll reveal
-function revealOnScroll() {
-    document.querySelectorAll('.service-card, .testimonial-card, .team-card, .portfolio-item, .process-step, .result-item, .contact-info, .contact-form').forEach(el => {
-        el.classList.add('reveal');
-        if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-            el.classList.add('visible');
+// ===== SCROLL PROGRESS BAR =====
+const scrollProgress = document.getElementById('scrollProgress');
+function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+    scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+}
+window.addEventListener('scroll', updateScrollProgress);
+
+// ===== APPLE-STYLE SCROLL ANIMATIONS =====
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
         }
     });
-}
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all animation elements
+document.querySelectorAll('.anim-element, .anim-blur-in, .anim-fade-up, .anim-slide-left, .anim-slide-right, .anim-scale-in, .anim-tilt, .anim-rotate-in, .anim-pop, .anim-counter, .anim-stagger, .section-anim').forEach(el => {
+    animationObserver.observe(el);
+});
 
 // Form submit
 document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -1499,10 +1771,19 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         alert('Please fill in all required fields.');
         return;
     }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
     
-    // Show success (in production, this would submit to a backend)
-    alert('Thanks for reaching out! We\'ll get back to you within 24 hours.');
-    this.reset();
+    // Show success
+    this.innerHTML = `
+        <div style="text-align: center; padding: 3rem;">
+            <div style="width: 70px; height: 70px; background: rgba(14, 165, 233, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">✓</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Request Sent!</h3>
+            <p style="color: var(--text-muted);">Thanks ${firstName}! We'll be in touch within 24 hours.</p>
+        </div>
+    `;
 });
 </script>
 </body>
