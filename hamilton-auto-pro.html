@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamilton Auto Pro | Expert Auto Repair & Mechanic Services</title>
+    <title>Hamilton Pro Auto | Trusted Mechanic in Hamilton, ON</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ============ VARIABLES ============ */
         :root {
             --primary: #E8501C;
             --primary-dark: #C43D10;
@@ -32,18 +31,9 @@
             --font-display: 'Bebas Neue', sans-serif;
             --font-body: 'Barlow', sans-serif;
         }
-
-        /* ============ RESET ============ */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--light);
-            overflow-x: hidden;
-        }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--text-dark); background: var(--light); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
@@ -51,7 +41,6 @@
         .centered { text-align: center; }
         section { scroll-margin-top: 80px; }
 
-        /* ============ TYPOGRAPHY ============ */
         h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing: 0.02em; }
         h1 { font-size: clamp(3rem, 7vw, 5.5rem); text-transform: uppercase; }
         h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); text-transform: uppercase; }
@@ -60,45 +49,19 @@
         .accent { color: var(--primary); }
 
         .section-label {
-            display: inline-block;
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            position: relative;
-            padding-left: 2rem;
+            display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.2em; color: var(--primary);
+            margin-bottom: 0.75rem; position: relative; padding-left: 2rem;
         }
-        .section-label::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 1.2rem;
-            height: 2px;
-            background: var(--primary);
-        }
+        .section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 1.2rem; height: 2px; background: var(--primary); }
 
-        /* ============ BUTTONS ============ */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.9rem 2rem;
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border: 2px solid transparent;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem;
+            font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;
+            letter-spacing: 0.08em; border: 2px solid transparent; border-radius: var(--radius); cursor: pointer; transition: var(--transition);
         }
         .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
-        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,80,28,0.35); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,56,44,0.35); }
         .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
         .btn-outline-dark { background: transparent; color: var(--dark); border-color: var(--dark-3); }
@@ -109,19 +72,10 @@
         .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
         .btn-full { width: 100%; justify-content: center; }
 
-        /* ============ NAVBAR ============ */
-        .navbar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 1rem 0; transition: var(--transition); background: transparent;
-        }
-        .navbar.scrolled {
-            background: rgba(26,26,26,0.97); backdrop-filter: blur(12px);
-            padding: 0.6rem 0; box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-        }
-        .nav-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: flex; align-items: center; justify-content: space-between;
-        }
+        /* NAVBAR */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; transition: var(--transition); background: transparent; }
+        .navbar.scrolled { background: rgba(26,26,26,0.97); backdrop-filter: blur(12px); padding: 0.6rem 0; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 0.75rem; }
         .logo-icon { font-size: 1.8rem; }
         .logo-text { display: flex; flex-direction: column; }
@@ -134,35 +88,18 @@
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
         .nav-cta { padding: 0.6rem 1.5rem; background: var(--primary); color: var(--white) !important; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; border-radius: var(--radius); transition: var(--transition); }
         .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
-
         .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
         .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); transition: var(--transition); }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        /* ============ HERO ============ */
-        .hero {
-            position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute; inset: 0; z-index: 0;
-            background: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80') center/cover no-repeat;
-        }
-        .hero-bg::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(26,26,26,0.93) 0%, rgba(26,26,26,0.7) 50%, rgba(232,80,28,0.1) 100%);
-        }
-        .hero-content {
-            position: relative; z-index: 2; max-width: 750px; padding: 8rem 2rem 4rem; margin: 0 auto 0 8%;
-        }
-        .hero-badge {
-            display: inline-block; padding: 0.4rem 1rem;
-            background: rgba(232,80,28,0.15); border: 1px solid rgba(232,80,28,0.3);
-            border-radius: 50px; color: var(--primary-light);
-            font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
-            margin-bottom: 1.5rem; animation: fadeInDown 0.6s ease-out;
-        }
+        /* HERO */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80') center/cover no-repeat; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,26,0.94) 0%, rgba(26,26,26,0.72) 50%, rgba(212,56,44,0.1) 100%); }
+        .hero-content { position: relative; z-index: 2; max-width: 750px; padding: 8rem 2rem 4rem; margin: 0 auto 0 8%; }
+        .hero-badge { display: inline-block; padding: 0.4rem 1rem; background: rgba(212,56,44,0.15); border: 1px solid rgba(212,56,44,0.3); border-radius: 50px; color: var(--primary-light); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.5rem; animation: fadeInDown 0.6s ease-out; }
         .hero h1 { color: var(--white); margin-bottom: 1.5rem; animation: fadeInUp 0.7s ease-out 0.15s both; }
         .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; animation: fadeInUp 0.7s ease-out 0.3s both; }
         .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; animation: fadeInUp 0.7s ease-out 0.45s both; }
@@ -174,51 +111,68 @@
         .hero-scroll { position: absolute; bottom: 2rem; right: 3rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; z-index: 2; }
         .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--primary), transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
-        /* ============ ABOUT ============ */
-        .about { padding: 7rem 0; background: var(--white); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        /* ABOUT */
+        .about { padding: 6rem 0; background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
         .about-image-block { position: relative; }
-        .about-img { width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius-lg); }
-        .about-exp-badge {
-            position: absolute; bottom: -1.5rem; right: -1.5rem;
-            background: var(--primary); color: var(--white); padding: 1.5rem;
-            border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-lg);
+        .about-img { 
+            width: 100%; 
+            height: 520px; 
+            object-fit: cover; 
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
         }
-        .exp-num { display: block; font-family: var(--font-display); font-size: 3rem; line-height: 1; }
+        .about-exp-badge { 
+            position: absolute; 
+            bottom: -1.5rem; 
+            right: -1.5rem; 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 1.75rem 2rem; 
+            border-radius: var(--radius-lg); 
+            text-align: center; 
+            box-shadow: var(--shadow-lg); 
+        }
+        .exp-num { display: block; font-family: var(--font-display); font-size: 3.5rem; line-height: 1; }
         .exp-txt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
         .about-text h2 { margin-bottom: 1.5rem; }
         .about-text p { color: var(--text-dark-muted); margin-bottom: 1rem; line-height: 1.8; }
         .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 2rem 0; }
         .feature { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 0.9rem; }
-        .feature-icon {
-            width: 28px; height: 28px; background: rgba(232,80,28,0.1); color: var(--primary);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+        .feature-icon { width: 28px; height: 28px; background: rgba(212,56,44,0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0; }
+        
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-image-block { order: -1; }
+            .about-img { height: 400px; }
+        }
+        @media (max-width: 768px) {
+            .about { padding: 4rem 0; }
+            .about-img { height: 320px; }
+            .about-exp-badge { bottom: -1rem; right: 1rem; padding: 1.25rem 1.5rem; }
+            .exp-num { font-size: 2.5rem; }
+            .about-features { grid-template-columns: 1fr; }
         }
 
-        /* ============ SERVICES ============ */
+        /* SERVICES */
         .services { padding: 7rem 0; background: var(--light); }
         .section-header { margin-bottom: 3.5rem; }
         .section-header p { color: var(--text-dark-muted); font-size: 1.05rem; max-width: 500px; margin: 0.5rem auto 0; }
         .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .service-card {
-            background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2rem;
-            position: relative; transition: var(--transition); border: 1px solid transparent; overflow: hidden;
-        }
-        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(232,80,28,0.15); }
+        .service-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2rem; position: relative; transition: var(--transition); border: 1px solid transparent; overflow: hidden; }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(212,56,44,0.15); }
         .service-card.featured { background: var(--dark); color: var(--white); }
         .service-card.featured p { color: var(--text-muted); }
         .service-card.featured .svc-link { color: var(--primary-light); }
         .card-badge { position: absolute; top: 1rem; right: 1rem; padding: 0.25rem 0.75rem; background: var(--primary); color: var(--white); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 50px; }
-        .svc-icon-wrap { width: 60px; height: 60px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; background: rgba(232,80,28,0.08); }
-        .service-card.featured .svc-icon-wrap { background: rgba(232,80,28,0.2); }
+        .svc-icon-wrap { width: 60px; height: 60px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; background: rgba(212,56,44,0.08); }
+        .service-card.featured .svc-icon-wrap { background: rgba(212,56,44,0.2); }
         .svc-icon { font-size: 1.8rem; }
         .service-card h3 { margin-bottom: 0.75rem; font-size: 1.3rem; }
         .service-card p { color: var(--text-dark-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
         .svc-link { font-weight: 700; font-size: 0.85rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.06em; }
-        .svc-link:hover { color: var(--primary-dark); }
 
-        /* ============ WHY US ============ */
+        /* WHY US */
         .why-us { padding: 7rem 0; background: var(--white); }
         .why-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
         .why-content h2 { margin-bottom: 2.5rem; }
@@ -229,7 +183,7 @@
         .why-item p { color: var(--text-dark-muted); font-size: 0.9rem; }
         .why-img { width: 100%; height: 550px; object-fit: cover; border-radius: var(--radius-lg); }
 
-        /* ============ GALLERY ============ */
+        /* GALLERY */
         .gallery { padding: 7rem 0; background: var(--dark); }
         .gallery .section-label { color: var(--primary-light); }
         .gallery .section-header p { color: var(--text-muted); }
@@ -238,31 +192,25 @@
         .gallery-item { position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: var(--transition); }
         .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; }
-        .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(26,26,26,0.9)); color: var(--white);
-            transform: translateY(100%); transition: var(--transition);
-        }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(transparent, rgba(26,26,26,0.9)); color: var(--white); transform: translateY(100%); transition: var(--transition); }
         .gallery-item:hover .gallery-overlay { transform: translateY(0); }
         .gallery-overlay h4 { font-size: 1.2rem; margin-bottom: 0.2rem; }
         .gallery-overlay p { font-size: 0.8rem; color: var(--text-muted); }
 
-        /* ============ TESTIMONIALS ============ */
+        /* TESTIMONIALS */
         .testimonials { padding: 7rem 0; background: var(--light); }
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .testimonial-card {
-            background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem;
-            border: 1px solid var(--light-2); transition: var(--transition);
-        }
-        .testimonial-card:hover { border-color: rgba(232,80,28,0.2); transform: translateY(-4px); box-shadow: var(--shadow); }
+        .testimonial-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--light-2); transition: var(--transition); }
+        .testimonial-card:hover { border-color: rgba(212,56,44,0.2); transform: translateY(-4px); box-shadow: var(--shadow); }
         .stars { color: #F5A623; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
         .testimonial-card > p { color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
         .t-author { display: flex; align-items: center; gap: 0.75rem; }
         .t-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--primary); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
         .t-author strong { display: block; font-size: 0.9rem; }
         .t-author span { font-size: 0.75rem; color: var(--text-dark-muted); }
+        .review-source { font-size: 0.7rem; color: var(--text-dark-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
 
-        /* ============ CONTACT ============ */
+        /* CONTACT */
         .contact { padding: 7rem 0; background: var(--white); }
         .contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: flex-start; }
         .contact-form-wrap h2 { margin-bottom: 0.5rem; }
@@ -271,12 +219,8 @@
         .form-group { display: flex; flex-direction: column; }
         .form-group.full { margin-bottom: 1.5rem; }
         .form-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dark-muted); margin-bottom: 0.4rem; }
-        .form-group input, .form-group select, .form-group textarea {
-            padding: 0.85rem 1rem; border: 2px solid var(--light-2); border-radius: var(--radius);
-            font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dark);
-            transition: var(--transition); background: var(--white); outline: none;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(232,80,28,0.1); }
+        .form-group input, .form-group select, .form-group textarea { padding: 0.85rem 1rem; border: 2px solid var(--light-2); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dark); transition: var(--transition); background: var(--white); outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(212,56,44,0.1); }
         .form-group textarea { resize: vertical; }
         .form-note { text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-dark-muted); }
         .form-success { text-align: center; padding: 3rem; display: none; }
@@ -298,18 +242,19 @@
         .hours-row { display: flex; justify-content: space-between; font-size: 0.9rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--light-2); }
         .hours-row.closed strong { color: var(--primary); }
 
-        /* ============ CTA BANNER ============ */
-        .cta-banner {
-            padding: 5rem 0; text-align: center; position: relative; overflow: hidden;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        }
+        /* MAP */
+        .map-section { width: 100%; }
+        .map-section iframe { width: 100%; height: 400px; border: 0; display: block; filter: grayscale(30%); }
+
+        /* CTA */
+        .cta-banner { padding: 5rem 0; text-align: center; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
         .cta-banner::before { content: ''; position: absolute; top: -50%; left: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 60%); }
         .cta-inner { position: relative; z-index: 2; }
         .cta-inner h2 { color: var(--white); margin-bottom: 0.5rem; }
         .cta-inner p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; }
         .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        /* ============ FOOTER ============ */
+        /* FOOTER */
         .footer { background: var(--dark); color: var(--text-muted); padding: 4rem 0 2rem; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--dark-3); }
         .footer-brand p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.6; }
@@ -319,396 +264,1259 @@
         .footer-hours { margin-top: 1rem; font-size: 0.85rem; line-height: 1.6; }
         .footer-bottom { padding-top: 2rem; text-align: center; font-size: 0.8rem; color: var(--dark-3); }
 
-        /* ============ ANIMATIONS ============ */
+        /* ANIMATIONS */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* ============ RESPONSIVE ============ */
+        /* ===== APPLE-STYLE SCROLL ANIMATIONS ===== */
+        
+        /* Base animation states */
+        .anim-fade-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-fade-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .anim-fade-in {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-fade-in.in-view {
+            opacity: 1;
+        }
+        
+        .anim-slide-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-slide-left.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .anim-slide-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-slide-right.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .anim-scale-in {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-scale-in.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .anim-blur-in {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-blur-in.in-view {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+        
+        /* Staggered children animations */
+        .anim-stagger > * {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-stagger.in-view > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(7) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+        .anim-stagger.in-view > *:nth-child(8) { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+        
+        /* Text reveal animation - character by character feel */
+        .anim-text-reveal {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-text-reveal.in-view {
+            clip-path: inset(0 0% 0 0);
+        }
+        
+        /* Draw line animation */
+        .anim-draw-line {
+            position: relative;
+        }
+        .anim-draw-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-draw-line.in-view::after {
+            width: 100%;
+        }
+        
+        /* Rotate in */
+        .anim-rotate-in {
+            opacity: 0;
+            transform: rotate(-10deg) translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-rotate-in.in-view {
+            opacity: 1;
+            transform: rotate(0) translateY(0);
+        }
+        
+        /* Zoom parallax for images */
+        .anim-zoom-parallax {
+            transform: scale(1.15);
+            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-zoom-parallax.in-view {
+            transform: scale(1);
+        }
+        
+        /* Split text animation */
+        .split-text .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .split-text.in-view .char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Counter box pop */
+        .anim-pop {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .anim-pop.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Mask reveal */
+        .anim-mask-up {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-mask-up.in-view {
+            clip-path: inset(0% 0 0 0);
+        }
+        
+        /* Glow pulse on scroll */
+        .anim-glow {
+            transition: box-shadow 0.8s ease, transform 0.8s ease;
+        }
+        .anim-glow.in-view {
+            box-shadow: 0 0 60px rgba(212, 56, 44, 0.3);
+        }
+        
+        /* Card 3D tilt on scroll */
+        .anim-tilt {
+            transform: perspective(1000px) rotateX(10deg);
+            opacity: 0;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .anim-tilt.in-view {
+            transform: perspective(1000px) rotateX(0deg);
+            opacity: 1;
+        }
+        
+        /* Section header special animation */
+        .section-header.anim-ready .section-label {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .section-header.anim-ready h2 {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+        }
+        .section-header.anim-ready p {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+        }
+        .section-header.in-view .section-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .section-header.in-view h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-header.in-view p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            z-index: 9999;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
+        }
+        
+        /* Image reveal with overlay */
+        .img-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-reveal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary);
+            z-index: 2;
+            transform: translateX(-101%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .img-reveal.in-view::before {
+            transform: translateX(101%);
+        }
+        .img-reveal img {
+            transform: scale(1.2);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+        .img-reveal.in-view img {
+            transform: scale(1);
+        }
+
+        /* ===== ENHANCEMENT 1: LIVE STATUS BADGE ===== */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(34, 180, 85, 0.15);
+            border: 1px solid rgba(34, 180, 85, 0.3);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-left: 1rem;
+            animation: fadeInDown 0.6s ease-out 0.2s both;
+        }
+        .status-badge.open {
+            background: rgba(34, 180, 85, 0.15);
+            border-color: rgba(34, 180, 85, 0.3);
+            color: #22B455;
+        }
+        .status-badge.closed {
+            background: rgba(212, 56, 44, 0.15);
+            border-color: rgba(212, 56, 44, 0.3);
+            color: var(--primary-light);
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+        .status-badge.open .status-dot { background: #22B455; }
+        .status-badge.closed .status-dot { background: var(--primary); }
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        .nav-status {
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .status-badge { display: none; }
+        }
+
+        /* ===== ENHANCEMENT 2: ANIMATED COUNTERS ===== */
+        .trust-number {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--white);
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+        .trust-item:hover .trust-number {
+            transform: scale(1.1);
+        }
+        .counter-animated {
+            display: inline-block;
+        }
+
+        /* ===== ENHANCEMENT 3: BEFORE/AFTER SLIDER ===== */
+        .before-after {
+            padding: 7rem 0;
+            background: var(--light);
+        }
+        .ba-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: ew-resize;
+            box-shadow: var(--shadow-lg);
+        }
+        .ba-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .ba-before {
+            clip-path: inset(0 50% 0 0);
+            z-index: 2;
+        }
+        .ba-after {
+            z-index: 1;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--white);
+            z-index: 10;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .ba-handle::before,
+        .ba-handle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .ba-handle::before {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231A1A1A' stroke-width='2'%3E%3Cpath d='M18 8L22 12L18 16'/%3E%3Cpath d='M6 8L2 12L6 16'/%3E%3C/svg%3E") center/20px no-repeat;
+        }
+        .ba-handle::after { display: none; }
+        .ba-label {
+            position: absolute;
+            bottom: 1rem;
+            padding: 0.4rem 1rem;
+            background: rgba(26,26,26,0.85);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            z-index: 5;
+        }
+        .ba-label.before { left: 1rem; }
+        .ba-label.after { right: 1rem; }
+        .ba-info {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .ba-info h4 { margin-bottom: 0.25rem; color: var(--dark); }
+        .ba-info p { font-size: 0.9rem; color: var(--text-dark-muted); margin: 0; }
+        @media (max-width: 768px) {
+            .ba-container { grid-template-columns: 1fr; }
+        }
+
+        /* ===== ENHANCEMENT 4: FLOATING MOBILE CTA ===== */
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(26,26,26,0.98) 0%, rgba(26,26,26,0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .floating-cta.visible {
+            transform: translateY(0);
+        }
+        .floating-cta-inner {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .floating-cta .btn {
+            flex: 1;
+            padding: 1rem;
+            font-size: 0.85rem;
+            justify-content: center;
+        }
+        .floating-cta .btn-call {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .floating-cta .btn-quote {
+            background: var(--white);
+            color: var(--dark);
+            border-color: var(--white);
+        }
+        @media (max-width: 768px) {
+            .floating-cta { display: block; }
+            .footer { padding-bottom: 6rem; }
+        }
+
+        /* ===== ENHANCEMENT 5: PARALLAX EFFECTS ===== */
+        .parallax-bg {
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+        .hero-bg {
+            transform: translateZ(0);
+        }
+        .about-img, .why-img {
+            transition: transform 0.5s ease-out;
+        }
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== INVENTORY SECTION ===== */
+        .inventory { padding: 7rem 0; background: var(--white); }
+        .inventory .section-header { margin-bottom: 2.5rem; }
+        
+        .inventory-filters {
+            display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;
+            padding: 1.5rem; background: var(--light); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+        }
+        .filter-group { flex: 1; min-width: 150px; }
+        .filter-group label {
+            display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--text-dark-muted); margin-bottom: 0.4rem;
+        }
+        .filter-group select, .filter-group input {
+            width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--light-2); border-radius: var(--radius);
+            font-family: var(--font-body); font-size: 0.9rem; color: var(--text-dark); background: var(--white);
+            transition: var(--transition); cursor: pointer;
+        }
+        .filter-group select:focus, .filter-group input:focus {
+            outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(212,56,44,0.1);
+        }
+        .filter-reset { display: flex; align-items: flex-end; }
+        .filter-reset button {
+            padding: 0.7rem 1.5rem; background: var(--dark); color: var(--white); border: none;
+            border-radius: var(--radius); font-family: var(--font-body); font-weight: 600; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: var(--transition);
+        }
+        .filter-reset button:hover { background: var(--primary); }
+        
+        .inventory-results-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding: 0 0.5rem; }
+        .results-count { font-size: 0.9rem; color: var(--text-dark-muted); }
+        .results-count strong { color: var(--text-dark); }
+        .sort-options { display: flex; align-items: center; gap: 0.5rem; }
+        .sort-options label { font-size: 0.85rem; color: var(--text-dark-muted); }
+        .sort-options select { padding: 0.5rem 1rem; border: 2px solid var(--light-2); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.85rem; background: var(--white); cursor: pointer; }
+        
+        .inventory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        
+        .vehicle-card {
+            background: var(--light); border-radius: var(--radius-lg); overflow: hidden;
+            transition: var(--transition); border: 1px solid transparent; position: relative;
+        }
+        .vehicle-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(212,56,44,0.15); }
+        
+        .vehicle-badge {
+            position: absolute; top: 1rem; left: 1rem; padding: 0.35rem 0.85rem;
+            background: var(--primary); color: var(--white); font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em; border-radius: 50px; z-index: 10;
+        }
+        .vehicle-badge.sold { background: var(--dark); }
+        .vehicle-badge.featured { background: linear-gradient(135deg, #FFD700, #FFA500); color: var(--dark); }
+        
+        .vehicle-images { position: relative; height: 220px; overflow: hidden; background: var(--light-2); }
+        .vehicle-images-inner { display: flex; height: 100%; transition: transform 0.3s ease; }
+        .vehicle-images-inner img { min-width: 100%; width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; }
+        .image-nav { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.4rem; z-index: 5; }
+        .image-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: var(--transition); border: none; padding: 0; }
+        .image-dot.active, .image-dot:hover { background: var(--white); transform: scale(1.2); }
+        .image-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; background: rgba(26,26,26,0.6); color: var(--white); border: none; border-radius: 50%; cursor: pointer; opacity: 0; transition: var(--transition); display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 5; }
+        .vehicle-card:hover .image-arrow { opacity: 1; }
+        .image-arrow:hover { background: var(--primary); }
+        .image-arrow.prev { left: 0.5rem; }
+        .image-arrow.next { right: 0.5rem; }
+        .image-count { position: absolute; top: 1rem; right: 1rem; background: rgba(26,26,26,0.7); color: var(--white); padding: 0.25rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; z-index: 5; }
+        
+        .vehicle-content { padding: 1.5rem; }
+        .vehicle-title { font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.25rem; line-height: 1.2; }
+        .vehicle-subtitle { font-size: 0.85rem; color: var(--text-dark-muted); margin-bottom: 1rem; }
+        
+        .vehicle-specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--light-2); }
+        .spec-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; }
+        .spec-icon { font-size: 1rem; opacity: 0.7; }
+        .spec-value { color: var(--text-dark); font-weight: 500; }
+        
+        .vehicle-features { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+        .feature-tag { padding: 0.3rem 0.65rem; background: rgba(212,56,44,0.08); color: var(--primary); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; border-radius: 50px; }
+        
+        .vehicle-footer { display: flex; justify-content: space-between; align-items: center; }
+        .vehicle-price { display: flex; flex-direction: column; }
+        .price-current { font-family: var(--font-display); font-size: 1.8rem; color: var(--primary); line-height: 1; }
+        .price-original { font-size: 0.85rem; color: var(--text-dark-muted); text-decoration: line-through; }
+        .vehicle-cta { padding: 0.7rem 1.25rem; background: var(--dark); color: var(--white); border: none; border-radius: var(--radius); font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: var(--transition); }
+        .vehicle-cta:hover { background: var(--primary); transform: translateY(-2px); }
+        
+        .inventory-loading { text-align: center; padding: 4rem 2rem; color: var(--text-dark-muted); }
+        .loading-spinner { width: 50px; height: 50px; border: 4px solid var(--light-2); border-top-color: var(--primary); border-radius: 50%; margin: 0 auto 1.5rem; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .inventory-empty { text-align: center; padding: 4rem 2rem; background: var(--light); border-radius: var(--radius-lg); }
+        .empty-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.3; }
+        .inventory-empty h3 { margin-bottom: 0.5rem; color: var(--text-dark); }
+        .inventory-empty p { color: var(--text-dark-muted); margin-bottom: 1.5rem; }
+        
+        /* Vehicle Modal */
+        .vehicle-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 2rem; background: rgba(26,26,26,0.9); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: var(--transition); }
+        .vehicle-modal.active { opacity: 1; visibility: visible; }
+        .modal-content { position: relative; max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; background: var(--white); border-radius: var(--radius-lg); transform: translateY(30px) scale(0.95); transition: var(--transition); }
+        .vehicle-modal.active .modal-content { transform: translateY(0) scale(1); }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; width: 40px; height: 40px; background: var(--dark); color: var(--white); border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; z-index: 10; transition: var(--transition); }
+        .modal-close:hover { background: var(--primary); }
+        .modal-gallery { position: relative; height: 400px; background: var(--dark); }
+        .modal-gallery img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-gallery-nav { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 5; }
+        .modal-gallery-thumb { width: 60px; height: 45px; border-radius: 4px; overflow: hidden; cursor: pointer; opacity: 0.6; transition: var(--transition); border: 2px solid transparent; }
+        .modal-gallery-thumb.active, .modal-gallery-thumb:hover { opacity: 1; border-color: var(--white); }
+        .modal-gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: rgba(26,26,26,0.7); color: var(--white); border: none; border-radius: 50%; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; z-index: 5; }
+        .modal-arrow:hover { background: var(--primary); }
+        .modal-arrow.prev { left: 1rem; }
+        .modal-arrow.next { right: 1rem; }
+        .modal-body { padding: 2rem; }
+        .modal-title { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.5rem; }
+        .modal-subtitle { color: var(--text-dark-muted); margin-bottom: 1.5rem; }
+        .modal-specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1.5rem; background: var(--light); border-radius: var(--radius); margin-bottom: 1.5rem; }
+        .modal-spec { text-align: center; }
+        .modal-spec-value { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-dark); }
+        .modal-spec-label { font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .modal-description { margin-bottom: 1.5rem; color: var(--text-dark-muted); line-height: 1.7; }
+        .modal-features { margin-bottom: 2rem; }
+        .modal-features h4 { margin-bottom: 1rem; }
+        .modal-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+        .modal-feature-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.5rem; background: var(--light); border-radius: var(--radius); }
+        .modal-feature-item::before { content: '✓'; color: var(--primary); font-weight: 700; }
+        .modal-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--light-2); }
+        .modal-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--primary); }
+        .modal-actions { display: flex; gap: 1rem; }
+
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .inventory-grid { grid-template-columns: repeat(2, 1fr); }
+            .modal-specs { grid-template-columns: repeat(2, 1fr); }
+            .modal-features-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .why-grid { grid-template-columns: 1fr; }
             .why-img-wrap { display: none; }
+            .hero-content { margin: 0 auto; }
         }
         @media (max-width: 768px) {
+            /* MOBILE NAVIGATION */
             .nav-links, .nav-cta { display: none; }
             .hamburger { display: flex; }
-            .nav-links.active {
-                display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
-                background: rgba(26,26,26,0.98); padding: 2rem; gap: 1rem; backdrop-filter: blur(12px);
-            }
-            .hero-content { margin: 0; padding: 8rem 2rem 3rem; }
-            .hero-trust { flex-direction: column; gap: 1rem; }
+            .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,26,26,0.98); padding: 1.5rem 2rem; gap: 1rem; backdrop-filter: blur(12px); z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .nav-links.active a { padding: 0.75rem 0; }
+            
+            /* HERO OPTIMIZATIONS */
+            .hero { min-height: 85vh; }
+            .hero-content { margin: 0 auto; padding: 6rem 1.5rem 2rem; text-align: center; max-width: 100%; }
+            .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 1rem; }
+            .hero-sub { font-size: 1rem; margin-bottom: 1.5rem; }
+            .hero-trust { flex-direction: column; gap: 1.5rem; justify-content: center; }
             .trust-divider { width: 40px; height: 1px; }
+            .trust-number { font-size: 1.5rem; }
             .hero-scroll { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
+            .hero-badge { font-size: 0.65rem; }
+            
+            /* BUTTON IMPROVEMENTS - BETTER TOUCH TARGETS */
+            .btn { padding: 1rem 1.5rem; font-size: 0.9rem; min-height: 44px; display: flex; align-items: center; }
+            .hero-actions { flex-direction: column; gap: 0.75rem; }
+            .hero-actions .btn { width: 100%; justify-content: center; }
+            
+            /* ABOUT SECTION */
+            .about { padding: 3rem 0; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
             .about-image-block { order: -1; }
-            .about-img { height: 300px; }
-            .about-exp-badge { bottom: -1rem; right: 1rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .about-features { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; }
-            .hero-actions .btn { text-align: center; justify-content: center; }
+            .about-img { height: 260px; }
+            .about-exp-badge { bottom: -0.75rem; right: 1rem; padding: 1rem 1.25rem; }
+            .exp-num { font-size: 2rem; }
+            .about-text h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+            .about-features { grid-template-columns: 1fr; gap: 0.5rem; }
+            .about-text p { font-size: 0.95rem; }
+            
+            /* SERVICES GRID */
+            .services { padding: 4rem 0; }
+            .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .service-card { padding: 1.5rem; }
+            .service-card h3 { font-size: 1.1rem; }
+            .svc-icon-wrap { width: 48px; height: 48px; }
+            
+            /* INVENTORY IMPROVEMENTS */
+            .inventory { padding: 4rem 0; }
+            .inventory-filters { flex-direction: column; gap: 0.75rem; padding: 1rem; }
+            .filter-group { min-width: 100%; }
+            .filter-group select, .filter-group input { font-size: 16px; }
+            .filter-reset button { width: 100%; }
+            .inventory-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .inventory-results-info { flex-direction: column; gap: 0.75rem; align-items: stretch; }
+            .sort-options { flex-direction: column; }
+            .sort-options select { width: 100%; }
+            
+            /* VEHICLE CARD */
+            .vehicle-images { height: 200px; }
+            .vehicle-content { padding: 1.25rem; }
+            .vehicle-title { font-size: 1.2rem; }
+            .vehicle-specs { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .vehicle-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .vehicle-cta { width: 100%; }
+            
+            /* MODAL IMPROVEMENTS */
+            .vehicle-modal { padding: 0; }
+            .modal-content { max-height: 100vh; border-radius: 0; max-width: 100%; }
+            .modal-close { top: 0.5rem; right: 0.5rem; z-index: 20; }
+            .modal-gallery { height: 300px; }
+            .modal-gallery-thumb { width: 50px; height: 40px; }
+            .modal-body { padding: 1.5rem; }
+            .modal-title { font-size: 1.5rem; }
+            .modal-specs { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; padding: 1rem; }
+            .modal-spec-value { font-size: 1.1rem; }
+            .modal-features-grid { grid-template-columns: 1fr; }
+            .modal-footer { flex-direction: column; gap: 0.75rem; padding-top: 1rem; }
+            .modal-price { font-size: 2rem; }
+            .modal-actions { width: 100%; flex-direction: column; }
+            .modal-actions .btn { width: 100%; }
+            
+            /* WHY US SECTION */
+            .why-us { padding: 4rem 0; }
+            .why-content h2 { margin-bottom: 1.5rem; }
+            .why-items { gap: 1.5rem; }
+            .why-item { gap: 1rem; }
+            .why-num { font-size: 2rem; }
+            
+            /* TESTIMONIALS */
+            .testimonials { padding: 4rem 0; }
+            .testimonial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .testimonial-card { padding: 1.5rem; }
+            
+            /* CONTACT FORM */
+            .contact { padding: 4rem 0; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0.75rem; }
+            .form-group { margin-bottom: 0.75rem; }
+            .form-group input, .form-group select, .form-group textarea { font-size: 16px; padding: 0.9rem; }
+            .contact-sidebar { gap: 1rem; }
+            .info-card { padding: 1.5rem; }
+            
+            /* GALLERY GRID */
+            .gallery { padding: 4rem 0; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .gallery-item img { height: 220px; }
+            
+            /* FOOTER */
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer { padding: 3rem 0 1.5rem; }
+            
+            /* FORM HANDLING */
+            .form-group label { font-size: 0.8rem; }
         }
         @media (max-width: 480px) {
+            /* EXTRA SMALL SCREENS */
             .gallery-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+            h2 { font-size: clamp(1.2rem, 3vw, 2rem); }
+            h3 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+            
+            .container { padding: 0 1rem; }
+            
+            .navbar { padding: 0.75rem 0; }
+            .nav-container { padding: 0 1rem; }
+            .logo-name { font-size: 1.2rem; }
+            .logo-tagline { font-size: 0.6rem; }
+            
+            .hero { min-height: 75vh; }
+            .hero-content { padding: 5rem 1rem 2rem; }
+            .hero-badge { padding: 0.3rem 0.8rem; }
+            
+            /* SECTION PADDING */
+            .about, .services, .inventory, .why-us, .gallery, .testimonials, .contact { padding: 3rem 0; }
+            .section-header { margin-bottom: 2rem; }
+            
+            /* BUTTON STACKING */
+            .hero-actions { gap: 0.5rem; }
+            .btn { padding: 0.9rem 1.25rem; font-size: 0.85rem; }
+            
+            /* SERVICE CARDS - SINGLE COLUMN */
+            .service-card { padding: 1.25rem; }
+            .svc-icon-wrap { width: 44px; height: 44px; margin-bottom: 1rem; }
+            .svc-icon { font-size: 1.5rem; }
+            
+            /* INVENTORY OPTIMIZATIONS */
+            .inventory-filters { padding: 0.75rem; }
+            .filter-group { min-width: 100%; }
+            .inventory-grid { gap: 1rem; }
+            
+            /* VEHICLE MODAL FULL SCREEN */
+            .modal-content { max-height: 100vh; }
+            .modal-gallery { height: 250px; }
+            .modal-body { padding: 1rem; }
+            .modal-title { font-size: 1.3rem; margin-bottom: 0.3rem; }
+            .modal-subtitle { font-size: 0.8rem; }
+            .modal-specs { grid-template-columns: repeat(2, 1fr); padding: 0.75rem; }
+            .modal-feature-item { font-size: 0.8rem; }
+            
+            /* CONTACT FORM */
+            .contact-grid { gap: 1.5rem; }
+            .form-group select, .form-group input, .form-group textarea { font-size: 16px; }
+            
+            /* FOOTER OPTIMIZATION */
+            .footer-brand { margin-bottom: 1rem; }
+            .footer h4 { font-size: 1rem; }
+            .footer li { font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- ==================== NAVBAR ==================== -->
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="#home" class="logo">
-            <span class="logo-icon">⚙</span>
+            <span class="logo-icon">🔧</span>
             <div class="logo-text">
-                <span class="logo-name">Hamilton Auto Pro</span>
-                <span class="logo-tagline">Trusted Since 2012</span>
+                <span class="logo-name">Hamilton Pro</span>
+                <span class="logo-tagline">Centre · Est. 2015</span>
             </div>
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#inventory">Inventory</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Get a Quote</a>
+        <div class="nav-status">
+            <div class="status-badge" id="statusBadge">
+                <span class="status-dot"></span>
+                <span id="statusText">Open Now</span>
+            </div>
+            <a href="#contact" class="nav-cta">Get a Quote</a>
+        </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
+<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content">
-        <div class="hero-badge">Hamilton's #1 Rated Auto Shop</div>
-        <h1>Expert Auto Repair<br><span class="accent">You Can Trust</span></h1>
-        <p class="hero-sub">Full-service auto repair and maintenance for all makes and models. Honest diagnostics, fair pricing, and work done right — the first time.</p>
+        <div class="hero-badge" id="heroBadge">5.0 ★ Google Rating · 425 Reviews</div>
+        <h1>Hamilton's Most Trusted<br><span class="accent">Auto Repair Shop</span></h1>
+        <p class="hero-sub">Reliable, budget-friendly automotive repairs for all makes and models. Fully licensed technician. All work guaranteed. Serving Hamilton and the GTA.</p>
         <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Book Appointment</a>
-            <a href="tel:9055551234" class="btn btn-outline">📞 (905) 555-1234</a>
+            <a href="tel:9059231234" class="btn btn-outline">📞 (905) 923-1234</a>
         </div>
         <div class="hero-trust">
             <div class="trust-item">
-                <span class="trust-number">2,500+</span>
-                <span class="trust-label">Cars Serviced</span>
+                <span class="trust-number" id="statReviews" data-suffix="+">0</span>
+                <span class="trust-label">Google Reviews</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-                <span class="trust-number">4.9★</span>
-                <span class="trust-label">Google Rating</span>
+                <span class="trust-number" id="statRating" data-suffix="★" data-decimal="true">0</span>
+                <span class="trust-label">Perfect Rating</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-                <span class="trust-number">12+</span>
-                <span class="trust-label">Years Experience</span>
+                <span class="trust-number" id="statYears" data-suffix="+">0</span>
+                <span class="trust-label">Years Serving Hamilton</span>
             </div>
         </div>
     </div>
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- ==================== ABOUT ==================== -->
+<!-- ABOUT -->
 <section class="about" id="about">
     <div class="container">
         <div class="about-grid">
-            <div class="about-image-block">
-                <img class="about-img" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80" alt="Auto mechanic working in shop">
-                <div class="about-exp-badge">
-                    <span class="exp-num">12+</span>
-                    <span class="exp-txt">Years of<br>Experience</span>
+            <div class="about-image-block img-reveal anim-element">
+                <img class="about-img" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1000&q=80" alt="Hamilton Pro Auto shop">
+                <div class="about-exp-badge anim-pop anim-element">
+                    <span class="exp-num" id="aboutRating">5.0</span>
+                    <span class="exp-txt">Perfect<br>Google Rating</span>
                 </div>
             </div>
             <div class="about-text">
-                <span class="section-label">About Us</span>
-                <h2>Hamilton's Most Trusted<br><span class="accent">Neighbourhood Mechanic</span></h2>
-                <p>At Hamilton Auto Pro, we treat every vehicle like it's our own. Our certified technicians use the latest diagnostic equipment and genuine parts to keep your car running at its best.</p>
-                <p>Whether it's routine maintenance or a complex engine repair, we provide transparent estimates and honest advice — no upselling, no surprises.</p>
-                <div class="about-features">
-                    <div class="feature"><div class="feature-icon">✓</div><span>Certified Technicians</span></div>
+                <span class="section-label anim-slide-left anim-element">About Hamilton Pro's</span>
+                <h2 class="anim-blur-in anim-element">Your Go-To Spot for<br><span class="accent">Reliable Auto Repair</span></h2>
+                <p class="anim-fade-up anim-element">Hamilton Pro Auto was founded in 2018 with one goal: to provide the Hamilton and Greater Toronto Area community with the best automotive repair services at a fair price.</p>
+                <p class="anim-fade-up anim-element" style="transition-delay: 0.1s;">Hamilton Pro is a fully licensed automotive service technician who takes the time to explain repairs in detail without upselling unnecessary services. What you need is what we fix — nothing more, nothing less.</p>
+                <div class="about-features anim-stagger anim-element">
+                    <div class="feature"><div class="feature-icon">✓</div><span>Licensed Technician</span></div>
                     <div class="feature"><div class="feature-icon">✓</div><span>All Makes & Models</span></div>
-                    <div class="feature"><div class="feature-icon">✓</div><span>Warranty on All Work</span></div>
-                    <div class="feature"><div class="feature-icon">✓</div><span>Free Estimates</span></div>
+                    <div class="feature"><div class="feature-icon">✓</div><span>All Work Guaranteed</span></div>
+                    <div class="feature"><div class="feature-icon">✓</div><span>Fair & Honest Pricing</span></div>
                 </div>
-                <a href="#services" class="btn btn-primary">Our Services →</a>
+                <a href="#services" class="btn btn-primary anim-fade-up anim-element" style="transition-delay: 0.3s;">Our Services →</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== SERVICES ==================== -->
+<!-- SERVICES -->
 <section class="services" id="services">
     <div class="container">
-        <div class="section-header centered">
+        <div class="section-header centered anim-ready anim-element">
             <span class="section-label">What We Do</span>
-            <h2>Our Core <span class="accent">Services</span></h2>
-            <p>From oil changes to engine rebuilds, we've got you covered.</p>
+            <h2>Our <span class="accent">Services</span></h2>
+            <p>Complete auto repair and maintenance — done right, at a fair price.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
+        <div class="services-grid anim-stagger anim-element">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">🛢️</span></div>
-                <h3>Oil Change & Lube</h3>
-                <p>Conventional, synthetic blend, or full synthetic — quick and thorough every time.</p>
-                <span class="svc-link">From $49.99</span>
+                <h3>Oil Change & Maintenance</h3>
+                <p>Regular maintenance to keep your engine running smooth and extend the life of your vehicle.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card featured">
+            <div class="service-card featured anim-tilt">
                 <div class="card-badge">Most Popular</div>
                 <div class="svc-icon-wrap"><span class="svc-icon">🔧</span></div>
-                <h3>Brake Service</h3>
-                <p>Pads, rotors, calipers, and fluid — complete brake inspection and repair.</p>
-                <span class="svc-link">From $149.99</span>
+                <h3>Brake Repair</h3>
+                <p>Pads, rotors, calipers — complete brake inspection and repair to keep you stopping safely.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">⚡</span></div>
                 <h3>Engine Diagnostics</h3>
-                <p>State-of-the-art scanning and diagnostics to pinpoint issues fast.</p>
-                <span class="svc-link">From $89.99</span>
+                <p>Check engine light on? We'll find the root cause fast with advanced diagnostic tools.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">❄️</span></div>
                 <h3>A/C & Heating</h3>
-                <p>Stay comfortable year-round with expert climate system repair.</p>
-                <span class="svc-link">From $99.99</span>
+                <p>Stay comfortable through Hamilton's hot summers and cold winters with climate system repair.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">🔩</span></div>
                 <h3>Suspension & Steering</h3>
-                <p>Struts, shocks, alignment — for a safer, smoother ride.</p>
-                <span class="svc-link">From $129.99</span>
+                <p>Struts, shocks, sway bar links, alignment — for a safer, smoother ride.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">🔋</span></div>
-                <h3>Electrical & Battery</h3>
-                <p>Battery, alternator, starter, and wiring diagnostics and repair.</p>
-                <span class="svc-link">From $69.99</span>
+                <h3>Electrical Systems</h3>
+                <p>Sensors, ignition, wiring, radio — full electrical diagnostics and repair.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
+            <div class="service-card anim-tilt">
                 <div class="svc-icon-wrap"><span class="svc-icon">🛞</span></div>
                 <h3>Tire Service</h3>
-                <p>Sales, seasonal swap, rotation, balancing, and flat repair.</p>
-                <span class="svc-link">Swap: $79.99</span>
+                <p>Seasonal changeover, installation, rotation, balancing, and flat repair.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
-            <div class="service-card">
-                <div class="svc-icon-wrap"><span class="svc-icon">🚗</span></div>
-                <h3>Pre-Purchase Inspection</h3>
-                <p>150+ point inspection before you buy that used car.</p>
-                <span class="svc-link">$149.99</span>
+            <div class="service-card anim-tilt">
+                <div class="svc-icon-wrap"><span class="svc-icon">🛡️</span></div>
+                <h3>Safety Inspections</h3>
+                <p>Ontario safety standards inspection for buying, selling, or transferring vehicles.</p>
+                <span class="svc-link">Learn More →</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== WHY US ==================== -->
+<!-- INVENTORY -->
+<section class="inventory" id="inventory">
+    <div class="container">
+        <div class="section-header centered anim-ready anim-element">
+            <span class="section-label">Our Inventory</span>
+            <h2>Quality <span class="accent">Used Vehicles</span></h2>
+            <p>Hand-picked, inspected, and ready to drive. Updated weekly.</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="inventory-filters" id="inventoryFilters">
+            <div class="filter-group">
+                <label for="filterMake">Make</label>
+                <select id="filterMake"><option value="">All Makes</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="filterYear">Year</label>
+                <select id="filterYear"><option value="">All Years</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="filterPrice">Max Price</label>
+                <select id="filterPrice">
+                    <option value="">Any Price</option>
+                    <option value="10000">Under $10,000</option>
+                    <option value="15000">Under $15,000</option>
+                    <option value="20000">Under $20,000</option>
+                    <option value="25000">Under $25,000</option>
+                    <option value="30000">Under $30,000</option>
+                    <option value="40000">Under $40,000</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterBody">Body Type</label>
+                <select id="filterBody">
+                    <option value="">All Types</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Van">Van</option>
+                </select>
+            </div>
+            <div class="filter-reset">
+                <button onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Results Info -->
+        <div class="inventory-results-info">
+            <div class="results-count">Showing <strong id="resultsCount">0</strong> vehicles</div>
+            <div class="sort-options">
+                <label for="sortBy">Sort by:</label>
+                <select id="sortBy" onchange="sortInventory()">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="year-new">Year: Newest</option>
+                    <option value="mileage">Mileage: Lowest</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="inventory-loading" id="inventoryLoading">
+            <div class="loading-spinner"></div>
+            <p>Loading inventory...</p>
+        </div>
+
+        <!-- Vehicle Grid -->
+        <div class="inventory-grid anim-stagger anim-element" id="inventoryGrid"></div>
+
+        <!-- Empty State -->
+        <div class="inventory-empty" id="inventoryEmpty" style="display: none;">
+            <div class="empty-icon">🚗</div>
+            <h3>No Vehicles Found</h3>
+            <p>Try adjusting your filters or check back later for new arrivals.</p>
+            <button class="btn btn-primary" onclick="resetFilters()">Reset Filters</button>
+        </div>
+    </div>
+</section>
+
+<!-- Vehicle Detail Modal -->
+<div class="vehicle-modal" id="vehicleModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-gallery" id="modalGallery">
+            <img src="" alt="Vehicle" id="modalMainImage">
+            <button class="modal-arrow prev" onclick="modalSlide(-1)">‹</button>
+            <button class="modal-arrow next" onclick="modalSlide(1)">›</button>
+            <div class="modal-gallery-nav" id="modalThumbnails"></div>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-subtitle" id="modalSubtitle"></p>
+            <div class="modal-specs" id="modalSpecs"></div>
+            <div class="modal-description" id="modalDescription"></div>
+            <div class="modal-features">
+                <h4>Features & Equipment</h4>
+                <div class="modal-features-grid" id="modalFeatures"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price" id="modalPrice"></div>
+                <div class="modal-actions">
+                    <a href="#contact" class="btn btn-primary" onclick="closeModal()">Inquire Now</a>
+                    <a href="tel:(905) 923-1234" class="btn btn-outline-dark">📞 Call Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WHY US -->
 <section class="why-us">
     <div class="container">
         <div class="why-grid">
             <div class="why-content">
-                <span class="section-label">Why Choose Us</span>
-                <h2>We Don't Just Fix Cars.<br><span class="accent">We Build Trust.</span></h2>
-                <div class="why-items">
+                <span class="section-label anim-slide-left anim-element">Why Hamilton Pro's</span>
+                <h2 class="anim-blur-in anim-element">We Don't Just Fix Cars.<br><span class="accent">We Earn Your Trust.</span></h2>
+                <div class="why-items anim-stagger anim-element">
                     <div class="why-item">
                         <div class="why-num">01</div>
-                        <div><h4>Transparent Pricing</h4><p>No hidden fees. You'll get a detailed estimate before any work begins.</p></div>
+                        <div><h4>No Upselling — Ever</h4><p>We tell you what needs fixing and what can wait. You'll never pay for work you don't need.</p></div>
                     </div>
                     <div class="why-item">
                         <div class="why-num">02</div>
-                        <div><h4>Same-Day Service</h4><p>Most repairs completed within the day. We respect your time.</p></div>
+                        <div><h4>Fast Turnaround</h4><p>Most repairs completed same-day. We know you need your car back.</p></div>
                     </div>
                     <div class="why-item">
                         <div class="why-num">03</div>
-                        <div><h4>Quality Parts</h4><p>We use OEM and top-tier aftermarket parts with full warranty coverage.</p></div>
+                        <div><h4>All Work Guaranteed</h4><p>Every repair backed by our guarantee. If it's not right, we make it right.</p></div>
                     </div>
                     <div class="why-item">
                         <div class="why-num">04</div>
-                        <div><h4>Honest Advice</h4><p>We'll tell you what needs fixing now and what can wait. Period.</p></div>
+                        <div><h4>Budget-Friendly</h4><p>Quality repairs at fair prices. No surprise charges, no hidden fees.</p></div>
                     </div>
                 </div>
             </div>
-            <div class="why-img-wrap">
-                <img class="why-img" src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80" alt="Mechanic inspecting vehicle engine">
+            <div class="why-img-wrap img-reveal anim-element">
+                <img class="why-img anim-zoom-parallax" src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80" alt="Mechanic inspecting vehicle">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== GALLERY ==================== -->
-<section class="gallery" id="gallery">
+<!-- BEFORE/AFTER SHOWCASE -->
+<section class="before-after" id="transformations">
     <div class="container">
-        <div class="section-header centered">
-            <span class="section-label">Our Work</span>
-            <h2>Project <span class="accent">Gallery</span></h2>
-            <p>A look inside our shop and the quality work we deliver.</p>
+        <div class="section-header centered anim-ready anim-element">
+            <span class="section-label">See The Difference</span>
+            <h2>Before & <span class="accent">After</span></h2>
+            <p>Drag the slider to see the quality of our repair work.</p>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="Engine repair">
-                <div class="gallery-overlay"><h4>Engine Rebuild</h4><p>2019 Honda Civic</p></div>
+        <div class="ba-container">
+            <div class="anim-slide-left anim-element">
+                <div class="ba-slider anim-glow" id="baSlider1">
+                    <img class="ba-after" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="New brake rotors">
+                    <img class="ba-before" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Worn brake rotors">
+                    <div class="ba-handle"></div>
+                    <span class="ba-label before">Before</span>
+                    <span class="ba-label after">After</span>
+                </div>
+                <div class="ba-info">
+                    <h4>Brake Rotor Replacement</h4>
+                    <p>Worn rotors replaced with premium parts — stopping power restored</p>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Brake service">
-                <div class="gallery-overlay"><h4>Brake Overhaul</h4><p>2021 Toyota RAV4</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c6da20?w=600&q=80" alt="Auto shop interior">
-                <div class="gallery-overlay"><h4>Our Shop</h4><p>4-bay service facility</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&q=80" alt="Suspension work">
-                <div class="gallery-overlay"><h4>Strut Replacement</h4><p>2018 Ford Escape</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Car on lift">
-                <div class="gallery-overlay"><h4>Full Inspection</h4><p>2020 BMW 3 Series</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Finished car">
-                <div class="gallery-overlay"><h4>Service Complete</h4><p>Ready for pickup</p></div>
+            <div class="anim-slide-right anim-element">
+                <div class="ba-slider anim-glow" id="baSlider2">
+                    <img class="ba-after" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="Clean engine bay">
+                    <img class="ba-before" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80" alt="Dirty engine bay">
+                    <div class="ba-handle"></div>
+                    <span class="ba-label before">Before</span>
+                    <span class="ba-label after">After</span>
+                </div>
+                <div class="ba-info">
+                    <h4>Engine Bay Detailing</h4>
+                    <p>Complete cleaning and inspection — looks like new</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== TESTIMONIALS ==================== -->
+<!-- TESTIMONIALS -->
 <section class="testimonials">
     <div class="container">
-        <div class="section-header centered">
-            <span class="section-label">Testimonials</span>
-            <h2>What Our Customers <span class="accent">Say</span></h2>
+        <div class="section-header centered anim-ready anim-element">
+            <span class="section-label" id="testimonialLabel">425+ Google Reviews</span>
+            <h2>What Customers <span class="accent">Say</span></h2>
         </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
+        <div class="testimonial-grid anim-stagger anim-element">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="stars">★★★★★</div>
-                <p>"Took my Honda in for a weird engine noise. They diagnosed it in 30 minutes and had it fixed same day. Fair price, no BS. This is my go-to shop now."</p>
-                <div class="t-author"><div class="t-avatar">MK</div><div><strong>Mike K.</strong><span>Hamilton, ON</span></div></div>
+                <p>"Great mechanic, really knows his stuff. Brought in a 2010 Tucson with malfunctioning sensors. Hamilton Pro went out of his way, spending hours to figure out what was wrong and fixed it! Very knowledgeable and honest."</p>
+                <div class="t-author"><div class="t-avatar">G</div><div><strong>Google Reviewer</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="stars">★★★★★</div>
-                <p>"Finally found an honest mechanic. They told me my brakes still had life left instead of trying to sell me new ones. Refreshing experience."</p>
-                <div class="t-author"><div class="t-avatar">SR</div><div><strong>Sarah R.</strong><span>Stoney Creek, ON</span></div></div>
+                <p>"Hamilton Pro and his team are polite, thorough, and honest! They have the vehicle ready when they say they will AND show you all parts replaced. Most importantly, all at a reasonable price!"</p>
+                <div class="t-author"><div class="t-avatar">G</div><div><strong>Google Reviewer</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card anim-rotate-in">
                 <div class="stars">★★★★★</div>
-                <p>"Clean shop, friendly staff, and they sent me photos of the issue before doing the repair. Great communication from start to finish."</p>
-                <div class="t-author"><div class="t-avatar">JT</div><div><strong>James T.</strong><span>Dundas, ON</span></div></div>
+                <p>"Hamilton Pro's shop is truly a hidden gem! I honestly regret only discovering such an amazing place in Hamilton today, with such professional mechanics. Very professional, clean, and quality service."</p>
+                <div class="t-author"><div class="t-avatar">G</div><div><strong>Google Reviewer</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
             </div>
         </div>
     </div>
 </section>
 
-
-<!-- ==================== CONTACT ==================== -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="container">
         <div class="contact-grid">
-            <div class="contact-form-wrap">
+            <div class="contact-form-wrap anim-slide-left anim-element">
                 <span class="section-label">Get In Touch</span>
                 <h2>Request a <span class="accent">Free Quote</span></h2>
-                <p>Fill out the form below and we'll get back to you within 1 business hour.</p>
-                <div id="quoteForm">
+                <p>Fill out the form below and Hamilton Pro will get back to you as soon as possible.</p>
+                <form id="quoteForm" action="https://formspree.io/f/mreylyov" method="POST">
+                    <input type="hidden" name="_replyto" value="kenilsachaparawork@gmail.com">
+                    <input type="hidden" name="_subject" value="New Quote Request — Hamilton Pro Auto">
                     <div class="form-row">
-                        <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" placeholder="John" required></div>
-                        <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" placeholder="Smith" required></div>
+                        <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" name="first_name" placeholder="John" required></div>
+                        <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" name="last_name" placeholder="Smith" required></div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label for="email">Email *</label><input type="email" id="email" placeholder="john@email.com" required></div>
-                        <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" placeholder="(905) 555-1234" required></div>
+                        <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="john@email.com" required></div>
+                        <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" placeholder="(905) 923-1234" required></div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label for="vehicle">Vehicle (Year, Make, Model)</label><input type="text" id="vehicle" placeholder="2020 Honda Civic"></div>
+                        <div class="form-group"><label for="vehicle">Vehicle (Year, Make, Model)</label><input type="text" id="vehicle" name="vehicle" placeholder="2020 Honda Civic"></div>
                         <div class="form-group">
                             <label for="service">Service Needed</label>
-                            <select id="service">
+                            <select id="service" name="service">
                                 <option value="">Select a service...</option>
-                                <option value="oil">Oil Change & Lube</option>
-                                <option value="brakes">Brake Repair</option>
-                                <option value="engine">Engine Diagnostics</option>
-                                <option value="ac">A/C & Heating</option>
-                                <option value="suspension">Suspension & Steering</option>
-                                <option value="electrical">Electrical & Battery</option>
-                                <option value="tires">Tire Service</option>
-                                <option value="inspection">Pre-Purchase Inspection</option>
-                                <option value="other">Other</option>
+                                <option value="Oil Change & Maintenance">Oil Change & Maintenance</option>
+                                <option value="Brake Repair">Brake Repair</option>
+                                <option value="Engine Diagnostics">Engine Diagnostics</option>
+                                <option value="A/C & Heating">A/C & Heating</option>
+                                <option value="Suspension & Steering">Suspension & Steering</option>
+                                <option value="Electrical Systems">Electrical Systems</option>
+                                <option value="Tire Service">Tire Service</option>
+                                <option value="Safety Inspection">Safety Inspection</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group full">
                         <label for="message">Describe the Issue</label>
-                        <textarea id="message" rows="5" placeholder="Tell us what's going on with your vehicle — noises, warning lights, symptoms, etc."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us what's going on with your vehicle — noises, warning lights, symptoms, etc."></textarea>
                     </div>
-                    <button class="btn btn-primary btn-full" onclick="submitForm()">Send Quote Request</button>
-                    <p class="form-note">We typically respond within 1 hour during business hours.</p>
-                </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Quote Request</button>
+                    <p class="form-note">Walk-ins welcome · Appointments recommended for faster service</p>
+                </form>
                 <div class="form-success" id="formSuccess">
                     <div class="success-icon">✓</div>
                     <h3>Quote Request Sent!</h3>
-                    <p>Thanks for reaching out. We'll get back to you within 1 business hour.</p>
+                    <p>Thanks for reaching out. Hamilton Pro will get back to you as soon as possible.</p>
                 </div>
             </div>
             <div class="contact-sidebar">
                 <div class="info-card">
                     <h3>Contact Info</h3>
-                    <div class="c-detail"><span class="c-icon">📍</span><div><strong>Address</strong><p>123 King Street East<br>Hamilton, ON L8N 1A1</p></div></div>
-                    <div class="c-detail"><span class="c-icon">📞</span><div><strong>Phone</strong><p><a href="tel:9055551234">(905) 555-1234</a></p></div></div>
-                    <div class="c-detail"><span class="c-icon">✉️</span><div><strong>Email</strong><p><a href="mailto:info@hamiltonautopro.ca">info@hamiltonautopro.ca</a></p></div></div>
+                    <div class="c-detail"><span class="c-icon">📍</span><div><strong>Address</strong><p>123 Main Street<br>Hamilton, ON L8V 3Z1</p></div></div>
+                    <div class="c-detail"><span class="c-icon">📞</span><div><strong>Phone</strong><p><a href="tel:9059231234">(905) 923-1234</a></p></div></div>
+                    <div class="c-detail"><span class="c-icon">🌐</span><div><strong>Facebook</strong><p><a href="https://www.facebook.com/Hamilton ProsAutomotiveCentre/" target="_blank">@Hamilton ProsAutomotiveCentre</a></p></div></div>
                 </div>
-                <div class="info-card">
+                <div class="info-card anim-fade-up anim-element" style="transition-delay: 0.1s;">
                     <h3>Business Hours</h3>
                     <div class="hours-table">
-                        <div class="hours-row"><span>Monday – Friday</span><strong>8am – 6pm</strong></div>
-                        <div class="hours-row"><span>Saturday</span><strong>9am – 3pm</strong></div>
+                        <div class="hours-row"><span>Monday – Friday</span><strong>7:30am – 5:30pm</strong></div>
+                        <div class="hours-row closed"><span>Saturday</span><strong>Closed</strong></div>
                         <div class="hours-row closed"><span>Sunday</span><strong>Closed</strong></div>
                     </div>
                 </div>
-                <div class="info-card dark-card">
-                    <h3>Emergency?</h3>
-                    <p>Broken down and need help? Give us a call and we'll do our best to fit you in.</p>
-                    <a href="tel:9055551234" class="btn btn-primary btn-full" style="margin-top: 1rem;">Call Now</a>
+                <div class="info-card dark-card anim-fade-up anim-element" style="transition-delay: 0.2s;">
+                    <h3>Need Help Now?</h3>
+                    <p>Give Hamilton Pro a call directly. Walk-ins are always welcome during business hours.</p>
+                    <a href="tel:9059231234" class="btn btn-primary btn-full" style="margin-top: 1rem;">Call (905) 923-1234</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== CTA BANNER ==================== -->
+<!-- MAP -->
+<section class="map-section anim-mask-up anim-element">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.234!2d-79.8135!3d43.2635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c99746b77edc9%3A0xbc0235201cf8ddbd!2sHamilton Pro&#39;s%20Automotive%20Centre!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<!-- CTA -->
 <section class="cta-banner">
     <div class="container">
         <div class="cta-inner">
-            <h2>Ready to Get Your Car Fixed Right?</h2>
-            <p>Book your appointment today or call us for a free estimate.</p>
-            <div class="cta-actions">
+            <h2 class="anim-blur-in anim-element">Ready to Get Your Car Fixed Right?</h2>
+            <p class="anim-fade-up anim-element">Book with Hamilton Pro today — honest service, fair prices, guaranteed work.</p>
+            <div class="cta-actions anim-fade-up anim-element" style="transition-delay: 0.15s;">
                 <a href="#contact" class="btn btn-white">Book Now</a>
-                <a href="tel:9055551234" class="btn btn-outline-white">Call (905) 555-1234</a>
+                <a href="tel:(905) 923-1234" class="btn btn-outline-white">Call (905) 923-1234</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">⚙</span>
+                    <span class="logo-icon">🔧</span>
                     <div class="logo-text">
-                        <span class="logo-name">Hamilton Auto Pro</span>
-                        <span class="logo-tagline">Trusted Since 2012</span>
+                        <span class="logo-name">Hamilton Pro</span>
+                        <span class="logo-tagline">Centre · Est. 2015</span>
                     </div>
                 </div>
-                <p>Your trusted neighbourhood mechanic in Hamilton, Ontario. Quality repairs, honest service, fair prices.</p>
+                <p>Your go-to spot for reliable, budget-friendly automotive repairs in Hamilton and the GTA. All makes and models. All work guaranteed.</p>
             </div>
             <div>
                 <h4>Quick Links</h4>
@@ -722,72 +1530,87 @@
             <div>
                 <h4>Services</h4>
                 <ul>
-                    <li>Oil Change & Lube</li>
+                    <li>Oil Change & Maintenance</li>
                     <li>Brake Repair</li>
                     <li>Engine Diagnostics</li>
-                    <li>Tire Service</li>
-                    <li>A/C & Heating</li>
+                    <li>Suspension & Steering</li>
+                    <li>Electrical Systems</li>
+                    <li>Safety Inspections</li>
                 </ul>
             </div>
             <div>
                 <h4>Contact Us</h4>
                 <ul>
-                    <li>📍 123 King Street East<br>&nbsp;&nbsp;&nbsp;&nbsp;Hamilton, ON L8N 1A1</li>
-                    <li>📞 <a href="tel:9055551234">(905) 555-1234</a></li>
-                    <li>✉️ <a href="mailto:info@hamiltonautopro.ca">info@hamiltonautopro.ca</a></li>
+                    <li>📍 123 Main Street<br>&nbsp;&nbsp;&nbsp;&nbsp;Hamilton, ON L8V 3Z1</li>
+                    <li>📞 <a href="tel:9059231234">(905) 923-1234</a></li>
+                    <li>📘 <a href="https://www.facebook.com/Hamilton ProsAutomotiveCentre/" target="_blank">Facebook Page</a></li>
                 </ul>
                 <div class="footer-hours">
                     <strong>Hours</strong><br>
-                    Mon–Fri: 8am – 6pm<br>
-                    Sat: 9am – 3pm<br>
-                    Sun: Closed
+                    Mon–Fri: 7:30am – 5:30pm<br>
+                    Sat–Sun: Closed
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hamilton Auto Pro. All Rights Reserved.</p>
+            <p>&copy; 2026 Hamilton Pro Auto. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
 
-<script>
-// Navbar scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+<!-- FLOATING MOBILE CTA -->
+<div class="floating-cta" id="floatingCta">
+    <div class="floating-cta-inner">
+        <a href="tel:(905) 923-1234" class="btn btn-call">📞 Call Now</a>
+        <a href="#contact" class="btn btn-quote">Get a Quote</a>
+    </div>
+</div>
 
-// Mobile menu
+<script>
+// ╔════════════════════════════════════════════════════════════════════════════╗
+// ║  MARTIN'S AUTOMOTIVE - SITE CONFIGURATION                                  ║
+// ║  Update these values to match Google Reviews / business info               ║
+// ╚════════════════════════════════════════════════════════════════════════════╝
+
+const SITE_CONFIG = {
+    // Google Reviews Stats (update these when reviews change)
+    googleReviews: 425,      // Total number of Google reviews
+    googleRating: 5.0,       // Star rating (e.g., 4.9, 5.0)
+    yearsInBusiness: 7,      // Years serving Hamilton (since 2018)
+    
+    // Business Hours (24-hour format)
+    hours: {
+        weekdays: { open: 7.5, close: 17.5 },  // 7:30am - 5:30pm
+        saturday: null,  // null = closed
+        sunday: null     // null = closed
+    },
+    
+    // Contact Info
+    phone: '(905) 923-1234'
+};
+
+// ===== NAVBAR SCROLL =====
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+// ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); }); });
 
-// Active nav link on scroll
+// ===== ACTIVE NAV LINK =====
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 200) current = section.id;
-    });
-    navAnchors.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+    navAnchors.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + current) a.classList.add('active'); });
 });
 
-// Scroll reveal
+// ===== SCROLL REVEAL =====
 function revealOnScroll() {
-    document.querySelectorAll('.service-card, .testimonial-card, .why-item, .gallery-item, .info-card, .about-text, .about-image-block').forEach(el => {
+    document.querySelectorAll('.service-card, .testimonial-card, .why-item, .gallery-item, .info-card, .about-text, .about-image-block, .ba-slider').forEach(el => {
         el.classList.add('reveal');
         if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('visible');
     });
@@ -795,19 +1618,663 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Form submit
-function submitForm() {
-    const f = document.getElementById('firstName');
-    const l = document.getElementById('lastName');
-    const e = document.getElementById('email');
-    const p = document.getElementById('phone');
-    if (!f.value || !l.value || !e.value || !p.value) { alert('Please fill in all required fields.'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value)) { alert('Please enter a valid email address.'); return; }
-    document.getElementById('quoteForm').style.display = 'none';
-    const s = document.getElementById('formSuccess');
-    s.style.display = 'block';
-    s.style.animation = 'fadeInUp 0.5s ease forwards';
+// ===== ENHANCEMENT 1: LIVE STATUS BADGE =====
+function updateShopStatus() {
+    const badge = document.getElementById('statusBadge');
+    const text = document.getElementById('statusText');
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+    const hour = now.getHours();
+    const minutes = now.getMinutes();
+    const currentTime = hour + (minutes / 60);
+    
+    // Mon-Fri: 7:30am - 5:30pm (7.5 - 17.5)
+    const isWeekday = day >= 1 && day <= 5;
+    const isOpen = isWeekday && currentTime >= 7.5 && currentTime < 17.5;
+    
+    if (isOpen) {
+        badge.classList.add('open');
+        badge.classList.remove('closed');
+        const closeTime = 17.5;
+        const hoursLeft = Math.floor(closeTime - currentTime);
+        const minsLeft = Math.round((closeTime - currentTime - hoursLeft) * 60);
+        if (hoursLeft < 1) {
+            text.textContent = `Closes in ${minsLeft}m`;
+        } else {
+            text.textContent = 'Open Now';
+        }
+    } else {
+        badge.classList.add('closed');
+        badge.classList.remove('open');
+        // Calculate next open time
+        if (day === 0) { // Sunday
+            text.textContent = 'Opens Mon 7:30am';
+        } else if (day === 6) { // Saturday
+            text.textContent = 'Opens Mon 7:30am';
+        } else if (currentTime < 7.5) { // Before opening
+            text.textContent = 'Opens at 7:30am';
+        } else { // After closing
+            if (day === 5) {
+                text.textContent = 'Opens Mon 7:30am';
+            } else {
+                text.textContent = 'Opens Tomorrow 7:30am';
+            }
+        }
+    }
 }
+updateShopStatus();
+setInterval(updateShopStatus, 60000); // Update every minute
+
+// ===== APPLY CONFIG TO PAGE =====
+function applyConfig() {
+    // Hero badge
+    const heroBadge = document.getElementById('heroBadge');
+    if (heroBadge) {
+        heroBadge.textContent = `${SITE_CONFIG.googleRating} ★ Google Rating · ${SITE_CONFIG.googleReviews} Reviews`;
+    }
+    
+    // About section rating
+    const aboutRating = document.getElementById('aboutRating');
+    if (aboutRating) {
+        aboutRating.textContent = SITE_CONFIG.googleRating;
+    }
+    
+    // Testimonials label
+    const testimonialLabel = document.getElementById('testimonialLabel');
+    if (testimonialLabel) {
+        testimonialLabel.textContent = `${SITE_CONFIG.googleReviews}+ Google Reviews`;
+    }
+}
+applyConfig();
+
+// ===== ENHANCEMENT 2: ANIMATED COUNTERS =====
+function animateCounters() {
+    const stats = [
+        { id: 'statReviews', target: SITE_CONFIG.googleReviews, suffix: '+', decimal: false },
+        { id: 'statRating', target: SITE_CONFIG.googleRating, suffix: '★', decimal: true },
+        { id: 'statYears', target: SITE_CONFIG.yearsInBusiness, suffix: '+', decimal: false }
+    ];
+    
+    stats.forEach(stat => {
+        const el = document.getElementById(stat.id);
+        if (!el) return;
+        
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = stat.target * easeOut;
+            
+            if (stat.decimal) {
+                el.textContent = current.toFixed(1) + stat.suffix;
+            } else {
+                el.textContent = Math.floor(current) + stat.suffix;
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+        requestAnimationFrame(updateCounter);
+    });
+}
+
+// Trigger counters when hero is visible
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setTimeout(animateCounters, 500);
+            heroObserver.disconnect();
+        }
+    });
+}, { threshold: 0.3 });
+heroObserver.observe(document.querySelector('.hero-trust'));
+
+// ===== ENHANCEMENT 3: BEFORE/AFTER SLIDER =====
+function initBeforeAfterSliders() {
+    document.querySelectorAll('.ba-slider').forEach(slider => {
+        const handle = slider.querySelector('.ba-handle');
+        const beforeImg = slider.querySelector('.ba-before');
+        let isDragging = false;
+        
+        function updateSlider(x) {
+            const rect = slider.getBoundingClientRect();
+            let percentage = ((x - rect.left) / rect.width) * 100;
+            percentage = Math.max(0, Math.min(100, percentage));
+            
+            handle.style.left = percentage + '%';
+            beforeImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        }
+        
+        function startDrag(e) {
+            isDragging = true;
+            slider.style.cursor = 'grabbing';
+        }
+        
+        function endDrag() {
+            isDragging = false;
+            slider.style.cursor = 'ew-resize';
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            updateSlider(x);
+        }
+        
+        // Mouse events
+        handle.addEventListener('mousedown', startDrag);
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('mousemove', drag);
+        
+        // Touch events
+        handle.addEventListener('touchstart', startDrag);
+        document.addEventListener('touchend', endDrag);
+        document.addEventListener('touchmove', drag);
+        
+        // Click to move
+        slider.addEventListener('click', (e) => {
+            if (e.target === handle) return;
+            updateSlider(e.clientX);
+        });
+    });
+}
+initBeforeAfterSliders();
+
+// ===== ENHANCEMENT 4: FLOATING MOBILE CTA =====
+const floatingCta = document.getElementById('floatingCta');
+let lastScroll = 0;
+
+function updateFloatingCta() {
+    const heroHeight = document.querySelector('.hero').offsetHeight;
+    const footerTop = document.querySelector('.footer').offsetTop;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    // Show after scrolling past hero, hide near footer
+    const shouldShow = scrollY > heroHeight * 0.5 && (scrollY + windowHeight) < footerTop;
+    
+    if (shouldShow) {
+        floatingCta.classList.add('visible');
+    } else {
+        floatingCta.classList.remove('visible');
+    }
+    
+    lastScroll = scrollY;
+}
+window.addEventListener('scroll', updateFloatingCta);
+window.addEventListener('load', updateFloatingCta);
+
+// ===== ENHANCEMENT 5: PARALLAX EFFECTS =====
+function parallaxEffect() {
+    const scrollY = window.scrollY;
+    
+    // Hero background parallax
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+        heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+    }
+    
+    // About image subtle parallax
+    const aboutImg = document.querySelector('.about-img');
+    if (aboutImg) {
+        const aboutSection = document.querySelector('.about');
+        const aboutTop = aboutSection.offsetTop;
+        const aboutOffset = scrollY - aboutTop;
+        if (aboutOffset > -window.innerHeight && aboutOffset < aboutSection.offsetHeight) {
+            aboutImg.style.transform = `translateY(${aboutOffset * 0.08}px)`;
+        }
+    }
+    
+    // Why us image parallax
+    const whyImg = document.querySelector('.why-img');
+    if (whyImg) {
+        const whySection = document.querySelector('.why-us');
+        const whyTop = whySection.offsetTop;
+        const whyOffset = scrollY - whyTop;
+        if (whyOffset > -window.innerHeight && whyOffset < whySection.offsetHeight) {
+            whyImg.style.transform = `translateY(${whyOffset * 0.06}px)`;
+        }
+    }
+}
+window.addEventListener('scroll', () => requestAnimationFrame(parallaxEffect));
+
+// ===== APPLE-STYLE SCROLL ANIMATIONS =====
+const scrollProgress = document.getElementById('scrollProgress');
+
+// Scroll Progress Bar
+function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+    scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+}
+window.addEventListener('scroll', updateScrollProgress);
+
+// Intersection Observer for scroll-triggered animations
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            
+            // For stagger animations, also add in-view to parent
+            if (entry.target.classList.contains('anim-stagger')) {
+                entry.target.classList.add('in-view');
+            }
+            
+            // For section headers with special animation
+            if (entry.target.classList.contains('anim-ready')) {
+                entry.target.classList.add('in-view');
+            }
+        }
+    });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all animation elements
+document.querySelectorAll('.anim-element, .anim-fade-up, .anim-fade-in, .anim-slide-left, .anim-slide-right, .anim-scale-in, .anim-blur-in, .anim-pop, .anim-tilt, .anim-rotate-in, .anim-mask-up, .anim-stagger, .anim-ready, .anim-glow, .anim-zoom-parallax, .img-reveal').forEach(el => {
+    animationObserver.observe(el);
+});
+
+// Smooth scroll-linked animations for more fluid feel
+let ticking = false;
+function smoothScrollAnimations() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            // Add any continuous scroll-linked effects here
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+window.addEventListener('scroll', smoothScrollAnimations);
+
+// ===== FORM SUBMISSION =====
+const quoteForm = document.getElementById('quoteForm');
+quoteForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(quoteForm);
+    const btn = quoteForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch(quoteForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            quoteForm.style.display = 'none';
+            const s = document.getElementById('formSuccess');
+            s.style.display = 'block';
+            s.style.animation = 'fadeInUp 0.5s ease forwards';
+        } else {
+            alert('Something went wrong. Please try calling (905) 923-1234 instead.');
+            btn.textContent = 'Send Quote Request';
+            btn.disabled = false;
+        }
+    }).catch(() => {
+        alert('Something went wrong. Please try calling (905) 923-1234 instead.');
+        btn.textContent = 'Send Quote Request';
+        btn.disabled = false;
+    });
+});
+
+// ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  VEHICLE INVENTORY SYSTEM                                                 ║
+// ║                                                                            ║
+// ║  OPTION 1: Telegram Bot (Recommended)                                     ║
+// ║  Set DATA_SOURCE = 'telegram' and add your Cloudflare Worker URL          ║
+// ║                                                                            ║
+// ║  OPTION 2: Google Sheets                                                  ║
+// ║  Set DATA_SOURCE = 'sheets' and add your published Google Sheet URL       ║
+// ║                                                                            ║
+// ║  OPTION 3: Sample Data (for testing)                                      ║
+// ║  Set DATA_SOURCE = 'sample'                                               ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+
+// Choose your data source: 'telegram', 'sheets', or 'sample'
+const DATA_SOURCE = 'sample';
+
+// Telegram Bot API URL (from Cloudflare Worker)
+const TELEGRAM_API_URL = 'https://vehicle-inventory-bot.YOUR-SUBDOMAIN.workers.dev/api/inventory';
+
+// Google Sheets URL (if using sheets)
+const INVENTORY_API_URL = 'https://vehicle-inventory-bot.martinsinventory.workers.dev/api/inventory';
+
+// Sample data for testing
+const SAMPLE_INVENTORY = [
+    {
+        id: '1', status: 'Available', featured: 'Yes', year: '2021', make: 'Honda', model: 'Civic', trim: 'EX', bodyType: 'Sedan',
+        price: '24500', originalPrice: '26000', mileage: '45000', transmission: 'Automatic', drivetrain: 'FWD', fuelType: 'Gasoline',
+        exteriorColor: 'Crystal Black', interiorColor: 'Black', engine: '2.0L 4-Cyl', vin: '2HGFC2F59MH123456', stockNumber: 'M1001',
+        description: 'One owner, accident-free Honda Civic in excellent condition. Full service history available.',
+        features: 'Apple CarPlay,Android Auto,Heated Seats,Sunroof,Backup Camera,Blind Spot Monitoring',
+        image1: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80',
+        image2: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600&q=80', image3: ''
+    },
+    {
+        id: '2', status: 'Available', featured: 'No', year: '2020', make: 'Toyota', model: 'RAV4', trim: 'XLE', bodyType: 'SUV',
+        price: '32000', originalPrice: '', mileage: '52000', transmission: 'Automatic', drivetrain: 'AWD', fuelType: 'Gasoline',
+        exteriorColor: 'Lunar Rock', interiorColor: 'Black', engine: '2.5L 4-Cyl', vin: '2T3P1RFV0LC123456', stockNumber: 'M1002',
+        description: 'Popular Toyota RAV4 with all-wheel drive. Perfect for Canadian winters.',
+        features: 'AWD,Heated Seats,Apple CarPlay,Backup Camera,Toyota Safety Sense,Power Liftgate',
+        image1: 'https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=600&q=80', image2: '', image3: ''
+    },
+    {
+        id: '3', status: 'Available', featured: 'Yes', year: '2019', make: 'Ford', model: 'F-150', trim: 'XLT', bodyType: 'Truck',
+        price: '38500', originalPrice: '41000', mileage: '65000', transmission: 'Automatic', drivetrain: '4WD', fuelType: 'Gasoline',
+        exteriorColor: 'Oxford White', interiorColor: 'Gray', engine: '5.0L V8', vin: '1FTEW1EP9KFA12345', stockNumber: 'M1003',
+        description: 'Powerful F-150 with the 5.0L V8 engine. 4x4 ready for work or play.',
+        features: '4WD,V8 Engine,Tow Package,Bed Liner,Backup Camera,SYNC 3',
+        image1: 'https://images.unsplash.com/photo-1590739225287-bd31519780c3?w=600&q=80', image2: '', image3: ''
+    },
+    {
+        id: '4', status: 'Sold', featured: 'No', year: '2022', make: 'Hyundai', model: 'Elantra', trim: 'Preferred', bodyType: 'Sedan',
+        price: '23000', originalPrice: '', mileage: '28000', transmission: 'Automatic', drivetrain: 'FWD', fuelType: 'Gasoline',
+        exteriorColor: 'Electric Shadow', interiorColor: 'Black', engine: '2.0L 4-Cyl', vin: 'KMHLL4AG5NU123456', stockNumber: 'M1004',
+        description: 'Nearly new Hyundai Elantra with remaining factory warranty.',
+        features: 'Apple CarPlay,Android Auto,Heated Seats,Heated Steering Wheel,Blind Spot Monitoring',
+        image1: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600&q=80', image2: '', image3: ''
+    },
+    {
+        id: '5', status: 'Available', featured: 'No', year: '2018', make: 'Mazda', model: 'CX-5', trim: 'GS', bodyType: 'SUV',
+        price: '22500', originalPrice: '24000', mileage: '78000', transmission: 'Automatic', drivetrain: 'AWD', fuelType: 'Gasoline',
+        exteriorColor: 'Soul Red', interiorColor: 'Black', engine: '2.5L 4-Cyl', vin: 'JM3KFBCM5J0123456', stockNumber: 'M1005',
+        description: 'Sporty Mazda CX-5 in stunning Soul Red. AWD with excellent handling.',
+        features: 'AWD,Heated Seats,Backup Camera,Blind Spot Monitoring,Mazda Connect',
+        image1: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=600&q=80', image2: '', image3: ''
+    },
+    {
+        id: '6', status: 'Available', featured: 'No', year: '2017', make: 'Chevrolet', model: 'Cruze', trim: 'LT', bodyType: 'Hatchback',
+        price: '14500', originalPrice: '', mileage: '95000', transmission: 'Automatic', drivetrain: 'FWD', fuelType: 'Gasoline',
+        exteriorColor: 'Silver Ice', interiorColor: 'Jet Black', engine: '1.4L Turbo', vin: '3G1BE6SM5HS123456', stockNumber: 'M1006',
+        description: 'Affordable and reliable Chevy Cruze hatchback. Great on gas.',
+        features: 'Turbo Engine,Apple CarPlay,Android Auto,Backup Camera,Remote Start',
+        image1: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80', image2: '', image3: ''
+    }
+];
+
+let allVehicles = [];
+let filteredVehicles = [];
+
+// Initialize inventory on page load
+document.addEventListener('DOMContentLoaded', () => { loadInventory(); });
+
+async function loadInventory() {
+    const loadingEl = document.getElementById('inventoryLoading');
+    
+    try {
+        const response = await fetch(INVENTORY_API_URL);
+        const data = await response.json();
+        allVehicles = data.vehicles.map((v, i) => ({ ...v, id: v.id || String(i + 1) }));
+        
+        loadingEl.style.display = 'none';
+        populateFilters();
+        filteredVehicles = [...allVehicles];
+        sortInventory();
+    } catch (error) {
+        console.error('Error loading inventory:', error);
+        loadingEl.innerHTML = '<div class="empty-icon">⚠️</div><h3>Unable to Load Inventory</h3>';
+    }
+}
+
+function parseCSV(csvText) {
+    const lines = csvText.trim().split('\n');
+    const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+    return lines.slice(1).map((line, index) => {
+        const values = parseCSVLine(line);
+        const vehicle = { id: String(index + 1) };
+        headers.forEach((header, i) => {
+            const key = header.replace(/\s+/g, '').replace(/^(.)/, c => c.toLowerCase());
+            vehicle[key] = values[i] ? values[i].trim().replace(/"/g, '') : '';
+        });
+        return vehicle;
+    }).filter(v => v.status && v.status !== 'Hidden');
+}
+
+function parseCSVLine(line) {
+    const values = []; let current = ''; let inQuotes = false;
+    for (let char of line) {
+        if (char === '"') inQuotes = !inQuotes;
+        else if (char === ',' && !inQuotes) { values.push(current); current = ''; }
+        else current += char;
+    }
+    values.push(current);
+    return values;
+}
+
+function populateFilters() {
+    const makes = [...new Set(allVehicles.map(v => v.make))].sort();
+    const years = [...new Set(allVehicles.map(v => v.year))].sort((a, b) => b - a);
+    const makeSelect = document.getElementById('filterMake');
+    const yearSelect = document.getElementById('filterYear');
+    makes.forEach(make => { if (make) makeSelect.innerHTML += `<option value="${make}">${make}</option>`; });
+    years.forEach(year => { if (year) yearSelect.innerHTML += `<option value="${year}">${year}</option>`; });
+}
+
+function applyFilters() {
+    const make = document.getElementById('filterMake').value;
+    const year = document.getElementById('filterYear').value;
+    const maxPrice = document.getElementById('filterPrice').value;
+    const bodyType = document.getElementById('filterBody').value;
+    
+    filteredVehicles = allVehicles.filter(v => {
+        if (make && v.make !== make) return false;
+        if (year && v.year !== year) return false;
+        if (maxPrice && parseInt(v.price) > parseInt(maxPrice)) return false;
+        if (bodyType && v.bodyType !== bodyType) return false;
+        return true;
+    });
+    sortInventory();
+}
+
+function sortInventory() {
+    const sortBy = document.getElementById('sortBy').value;
+    filteredVehicles.sort((a, b) => {
+        switch (sortBy) {
+            case 'price-low': return parseInt(a.price) - parseInt(b.price);
+            case 'price-high': return parseInt(b.price) - parseInt(a.price);
+            case 'year-new': return parseInt(b.year) - parseInt(a.year);
+            case 'mileage': return parseInt(a.mileage) - parseInt(b.mileage);
+            default:
+                if (a.featured === 'Yes' && b.featured !== 'Yes') return -1;
+                if (b.featured === 'Yes' && a.featured !== 'Yes') return 1;
+                return parseInt(b.price) - parseInt(a.price);
+        }
+    });
+    renderInventory();
+}
+
+function resetFilters() {
+    document.getElementById('filterMake').value = '';
+    document.getElementById('filterYear').value = '';
+    document.getElementById('filterPrice').value = '';
+    document.getElementById('filterBody').value = '';
+    document.getElementById('sortBy').value = 'featured';
+    filteredVehicles = [...allVehicles];
+    sortInventory();
+}
+
+function renderInventory() {
+    const gridEl = document.getElementById('inventoryGrid');
+    const emptyEl = document.getElementById('inventoryEmpty');
+    const countEl = document.getElementById('resultsCount');
+    countEl.textContent = filteredVehicles.length;
+    
+    if (filteredVehicles.length === 0) {
+        gridEl.style.display = 'none';
+        emptyEl.style.display = 'block';
+        return;
+    }
+    gridEl.style.display = 'grid';
+    emptyEl.style.display = 'none';
+    gridEl.innerHTML = filteredVehicles.map(v => createVehicleCard(v)).join('');
+}
+
+function createVehicleCard(v) {
+    const images = [v.image1, v.image2, v.image3].filter(img => img);
+    const badge = v.status === 'Sold' ? '<span class="vehicle-badge sold">Sold</span>' : 
+                  v.featured === 'Yes' ? '<span class="vehicle-badge featured">Featured</span>' : '';
+    const price = v.price ? '$' + parseInt(v.price).toLocaleString() : 'Call for Price';
+    const mileage = parseInt(v.mileage).toLocaleString();
+    const features = v.features ? v.features.split(',').slice(0, 3) : [];
+    const hasMultipleImages = images.length > 1;
+    
+    return `
+        <div class="vehicle-card" data-vehicle-id="${v.id}">
+            ${badge}
+            <div class="vehicle-images" onclick="openModal('${v.id}')">
+                ${hasMultipleImages ? `<span class="image-count">1/${images.length}</span>` : ''}
+                <div class="vehicle-images-inner" data-current="0">
+                    ${images.map(img => `<img src="${img}" alt="${v.year} ${v.make} ${v.model}" loading="lazy">`).join('')}
+                    ${images.length === 0 ? '<img src="https://via.placeholder.com/400x250?text=No+Image" alt="No image">' : ''}
+                </div>
+                ${hasMultipleImages ? `
+                    <button class="image-arrow prev" onclick="event.stopPropagation(); slideImage('${v.id}', -1)">‹</button>
+                    <button class="image-arrow next" onclick="event.stopPropagation(); slideImage('${v.id}', 1)">›</button>
+                    <div class="image-nav">
+                        ${images.map((_, i) => `<button class="image-dot ${i === 0 ? 'active' : ''}" onclick="event.stopPropagation(); goToImage('${v.id}', ${i})"></button>`).join('')}
+                    </div>
+                ` : ''}
+            </div>
+            <div class="vehicle-content" onclick="openModal('${v.id}')">
+                <h3 class="vehicle-title">${v.year} ${v.make} ${v.model}</h3>
+                <p class="vehicle-subtitle">${v.trim || ''} ${v.bodyType ? '• ' + v.bodyType : ''}</p>
+                <div class="vehicle-specs">
+                    <div class="spec-item"><span class="spec-icon">📏</span><span class="spec-value">${mileage} km</span></div>
+                    <div class="spec-item"><span class="spec-icon">⚙️</span><span class="spec-value">${v.transmission || 'Auto'}</span></div>
+                    <div class="spec-item"><span class="spec-icon">🚗</span><span class="spec-value">${v.drivetrain || 'FWD'}</span></div>
+                    <div class="spec-item"><span class="spec-icon">⛽</span><span class="spec-value">${v.fuelType || 'Gas'}</span></div>
+                </div>
+                ${features.length > 0 ? `<div class="vehicle-features">${features.map(f => `<span class="feature-tag">${f.trim()}</span>`).join('')}</div>` : ''}
+                <div class="vehicle-footer">
+                    <div class="vehicle-price">
+                        ${v.originalPrice ? `<span class="price-original">$${parseInt(v.originalPrice).toLocaleString()}</span>` : ''}
+                        <span class="price-current">${price}</span>
+                    </div>
+                    <button class="vehicle-cta">${v.status === 'Sold' ? 'Sold' : 'View Details'}</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Image carousel functions
+function slideImage(vehicleId, direction) {
+    const card = document.querySelector(`[data-vehicle-id="${vehicleId}"]`);
+    const inner = card.querySelector('.vehicle-images-inner');
+    const images = inner.querySelectorAll('img');
+    const dots = card.querySelectorAll('.image-dot');
+    const countEl = card.querySelector('.image-count');
+    let current = parseInt(inner.dataset.current);
+    
+    current += direction;
+    if (current < 0) current = images.length - 1;
+    if (current >= images.length) current = 0;
+    
+    inner.dataset.current = current;
+    inner.style.transform = `translateX(-${current * 100}%)`;
+    
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    if (countEl) countEl.textContent = `${current + 1}/${images.length}`;
+}
+
+function goToImage(vehicleId, index) {
+    const card = document.querySelector(`[data-vehicle-id="${vehicleId}"]`);
+    const inner = card.querySelector('.vehicle-images-inner');
+    const dots = card.querySelectorAll('.image-dot');
+    const countEl = card.querySelector('.image-count');
+    const images = inner.querySelectorAll('img');
+    
+    inner.dataset.current = index;
+    inner.style.transform = `translateX(-${index * 100}%)`;
+    
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    if (countEl) countEl.textContent = `${index + 1}/${images.length}`;
+}
+
+let currentModalImages = [];
+let currentModalIndex = 0;
+
+function openModal(id) {
+    const v = allVehicles.find(vehicle => vehicle.id === id);
+    if (!v) return;
+    
+    const modal = document.getElementById('vehicleModal');
+    const images = [v.image1, v.image2, v.image3].filter(img => img);
+    currentModalImages = images;
+    currentModalIndex = 0;
+    
+    // Set main image
+    document.getElementById('modalMainImage').src = images[0] || '';
+    
+    // Set thumbnails
+    const thumbsContainer = document.getElementById('modalThumbnails');
+    if (images.length > 1) {
+        thumbsContainer.innerHTML = images.map((img, i) => 
+            `<div class="modal-gallery-thumb ${i === 0 ? 'active' : ''}" onclick="modalGoTo(${i})">
+                <img src="${img}" alt="Thumbnail ${i + 1}">
+            </div>`
+        ).join('');
+        thumbsContainer.style.display = 'flex';
+        document.querySelectorAll('.modal-arrow').forEach(a => a.style.display = 'flex');
+    } else {
+        thumbsContainer.style.display = 'none';
+        document.querySelectorAll('.modal-arrow').forEach(a => a.style.display = 'none');
+    }
+    
+    document.getElementById('modalTitle').textContent = `${v.year} ${v.make} ${v.model}`;
+    document.getElementById('modalSubtitle').textContent = `${v.trim || ''} • ${v.exteriorColor || ''} • Stock #${v.stockNumber || 'N/A'}`;
+    document.getElementById('modalDescription').textContent = v.description || '';
+    document.getElementById('modalPrice').textContent = v.price ? '$' + parseInt(v.price).toLocaleString() : 'Call for Price';
+    
+    document.getElementById('modalSpecs').innerHTML = `
+        <div class="modal-spec"><div class="modal-spec-value">${parseInt(v.mileage).toLocaleString()}</div><div class="modal-spec-label">Kilometers</div></div>
+        <div class="modal-spec"><div class="modal-spec-value">${v.transmission || 'Auto'}</div><div class="modal-spec-label">Transmission</div></div>
+        <div class="modal-spec"><div class="modal-spec-value">${v.drivetrain || 'FWD'}</div><div class="modal-spec-label">Drivetrain</div></div>
+        <div class="modal-spec"><div class="modal-spec-value">${v.engine || 'N/A'}</div><div class="modal-spec-label">Engine</div></div>
+    `;
+    
+    const features = v.features ? v.features.split(',') : [];
+    document.getElementById('modalFeatures').innerHTML = features.map(f => `<div class="modal-feature-item">${f.trim()}</div>`).join('');
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function modalSlide(direction) {
+    currentModalIndex += direction;
+    if (currentModalIndex < 0) currentModalIndex = currentModalImages.length - 1;
+    if (currentModalIndex >= currentModalImages.length) currentModalIndex = 0;
+    modalGoTo(currentModalIndex);
+}
+
+function modalGoTo(index) {
+    currentModalIndex = index;
+    document.getElementById('modalMainImage').src = currentModalImages[index];
+    document.querySelectorAll('.modal-gallery-thumb').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+    });
+}
+
+function closeModal() {
+    document.getElementById('vehicleModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.getElementById('vehicleModal')?.addEventListener('click', (e) => { if (e.target.id === 'vehicleModal') closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('filterMake')?.addEventListener('change', applyFilters);
+document.getElementById('filterYear')?.addEventListener('change', applyFilters);
+document.getElementById('filterPrice')?.addEventListener('change', applyFilters);
+document.getElementById('filterBody')?.addEventListener('change', applyFilters);
 </script>
 </body>
 </html>
