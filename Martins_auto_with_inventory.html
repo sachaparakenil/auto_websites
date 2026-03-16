@@ -567,7 +567,11 @@
             align-items: center;
         }
         @media (max-width: 900px) {
-            .status-badge { display: none; }
+            .status-badge { display: inline-flex !important; margin-left: 0; font-size: 0.7rem; padding: 0.3rem 0.8rem; }
+            .nav-status { gap: 0.5rem; }
+        }
+        @media (max-width: 768px) {
+            .status-badge { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
         }
 
         /* ===== ENHANCEMENT 2: ANIMATED COUNTERS ===== */
@@ -738,7 +742,7 @@
         }
 
         /* ===== INVENTORY SECTION ===== */
-        .inventory { padding: 7rem 0; background: var(--white); }
+        .inventory { padding: 7rem 0; background: var(--light); }
         .inventory .section-header { margin-bottom: 2.5rem; }
         
         .inventory-filters {
@@ -873,39 +877,171 @@
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .why-grid { grid-template-columns: 1fr; }
             .why-img-wrap { display: none; }
+            .hero-content { margin: 0 auto; }
         }
         @media (max-width: 768px) {
+            /* MOBILE NAVIGATION */
             .nav-links, .nav-cta { display: none; }
             .hamburger { display: flex; }
-            .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,26,26,0.98); padding: 2rem; gap: 1rem; backdrop-filter: blur(12px); }
-            .hero-content { margin: 0; padding: 8rem 2rem 3rem; }
-            .hero-trust { flex-direction: column; gap: 1rem; }
+            .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,26,26,0.98); padding: 1.5rem 2rem; gap: 1rem; backdrop-filter: blur(12px); z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .nav-links.active a { padding: 0.75rem 0; }
+            
+            /* HERO OPTIMIZATIONS */
+            .hero { min-height: 85vh; }
+            .hero-content { margin: 0 auto; padding: 6rem 1.5rem 2rem; text-align: center; max-width: 100%; }
+            .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 1rem; }
+            .hero-sub { font-size: 1rem; margin-bottom: 1.5rem; }
+            .hero-trust { flex-direction: column; gap: 1.5rem; justify-content: center; }
             .trust-divider { width: 40px; height: 1px; }
+            .trust-number { font-size: 1.5rem; }
             .hero-scroll { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
+            .hero-badge { font-size: 0.65rem; }
+            
+            /* BUTTON IMPROVEMENTS - BETTER TOUCH TARGETS */
+            .btn { padding: 1rem 1.5rem; font-size: 0.9rem; min-height: 44px; display: flex; align-items: center; }
+            .hero-actions { flex-direction: column; gap: 0.75rem; }
+            .hero-actions .btn { width: 100%; justify-content: center; }
+            
+            /* ABOUT SECTION */
+            .about { padding: 3rem 0; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
             .about-image-block { order: -1; }
-            .about-img { height: 300px; }
-            .about-exp-badge { bottom: -1rem; right: 1rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .inventory-grid { grid-template-columns: 1fr; }
-            .inventory-filters { flex-direction: column; }
+            .about-img { height: 260px; }
+            .about-exp-badge { bottom: -0.75rem; right: 1rem; padding: 1rem 1.25rem; }
+            .exp-num { font-size: 2rem; }
+            .about-text h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+            .about-features { grid-template-columns: 1fr; gap: 0.5rem; }
+            .about-text p { font-size: 0.95rem; }
+            
+            /* SERVICES GRID */
+            .services { padding: 4rem 0; }
+            .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .service-card { padding: 1.5rem; }
+            .service-card h3 { font-size: 1.1rem; }
+            .svc-icon-wrap { width: 48px; height: 48px; }
+            
+            /* INVENTORY IMPROVEMENTS */
+            .inventory { padding: 4rem 0; }
+            .inventory-filters { flex-direction: column; gap: 0.75rem; padding: 1rem; }
             .filter-group { min-width: 100%; }
-            .inventory-results-info { flex-direction: column; gap: 1rem; align-items: flex-start; }
-            .modal-specs { grid-template-columns: repeat(2, 1fr); }
+            .filter-group select, .filter-group input { font-size: 16px; }
+            .filter-reset button { width: 100%; }
+            .inventory-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .inventory-results-info { flex-direction: column; gap: 0.75rem; align-items: stretch; }
+            .sort-options { flex-direction: column; }
+            .sort-options select { width: 100%; }
+            
+            /* VEHICLE CARD */
+            .vehicle-images { height: 200px; }
+            .vehicle-content { padding: 1.25rem; }
+            .vehicle-title { font-size: 1.2rem; }
+            .vehicle-specs { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .vehicle-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .vehicle-cta { width: 100%; }
+            
+            /* MODAL IMPROVEMENTS */
+            .vehicle-modal { padding: 0; }
+            .modal-content { max-height: 100vh; border-radius: 0; max-width: 100%; }
+            .modal-close { top: 0.5rem; right: 0.5rem; z-index: 20; }
+            .modal-gallery { height: 300px; }
+            .modal-gallery-thumb { width: 50px; height: 40px; }
+            .modal-body { padding: 1.5rem; }
+            .modal-title { font-size: 1.5rem; }
+            .modal-specs { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; padding: 1rem; }
+            .modal-spec-value { font-size: 1.1rem; }
             .modal-features-grid { grid-template-columns: 1fr; }
-            .modal-footer { flex-direction: column; gap: 1rem; }
-            .modal-actions { width: 100%; }
-            .modal-actions .btn { flex: 1; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .about-features { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; }
-            .hero-actions .btn { text-align: center; justify-content: center; }
+            .modal-footer { flex-direction: column; gap: 0.75rem; padding-top: 1rem; }
+            .modal-price { font-size: 2rem; }
+            .modal-actions { width: 100%; flex-direction: column; }
+            .modal-actions .btn { width: 100%; }
+            
+            /* WHY US SECTION */
+            .why-us { padding: 4rem 0; }
+            .why-content h2 { margin-bottom: 1.5rem; }
+            .why-items { gap: 1.5rem; }
+            .why-item { gap: 1rem; }
+            .why-num { font-size: 2rem; }
+            
+            /* TESTIMONIALS */
+            .testimonials { padding: 4rem 0; }
+            .testimonial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .testimonial-card { padding: 1.5rem; }
+            
+            /* CONTACT FORM */
+            .contact { padding: 4rem 0; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0.75rem; }
+            .form-group { margin-bottom: 0.75rem; }
+            .form-group input, .form-group select, .form-group textarea { font-size: 16px; padding: 0.9rem; }
+            .contact-sidebar { gap: 1rem; }
+            .info-card { padding: 1.5rem; }
+            
+            /* GALLERY GRID */
+            .gallery { padding: 4rem 0; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .gallery-item img { height: 220px; }
+            
+            /* FOOTER */
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer { padding: 3rem 0 1.5rem; }
+            
+            /* FORM HANDLING */
+            .form-group label { font-size: 0.8rem; }
         }
-        @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
+        @media (max-width: 480px) {
+            /* EXTRA SMALL SCREENS */
+            .gallery-grid { grid-template-columns: 1fr; }
+            h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+            h2 { font-size: clamp(1.2rem, 3vw, 2rem); }
+            h3 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+            
+            .container { padding: 0 1rem; }
+            
+            .navbar { padding: 0.75rem 0; }
+            .nav-container { padding: 0 1rem; }
+            .logo-name { font-size: 1.2rem; }
+            .logo-tagline { font-size: 0.6rem; }
+            
+            .hero { min-height: 75vh; }
+            .hero-content { padding: 5rem 1rem 2rem; }
+            .hero-badge { padding: 0.3rem 0.8rem; }
+            
+            /* SECTION PADDING */
+            .about, .services, .inventory, .why-us, .gallery, .testimonials, .contact { padding: 3rem 0; }
+            .section-header { margin-bottom: 2rem; }
+            
+            /* BUTTON STACKING */
+            .hero-actions { gap: 0.5rem; }
+            .btn { padding: 0.9rem 1.25rem; font-size: 0.85rem; }
+            
+            /* SERVICE CARDS - SINGLE COLUMN */
+            .service-card { padding: 1.25rem; }
+            .svc-icon-wrap { width: 44px; height: 44px; margin-bottom: 1rem; }
+            .svc-icon { font-size: 1.5rem; }
+            
+            /* INVENTORY OPTIMIZATIONS */
+            .inventory-filters { padding: 0.75rem; }
+            .filter-group { min-width: 100%; }
+            .inventory-grid { gap: 1rem; }
+            
+            /* VEHICLE MODAL FULL SCREEN */
+            .modal-content { max-height: 100vh; }
+            .modal-gallery { height: 250px; }
+            .modal-body { padding: 1rem; }
+            .modal-title { font-size: 1.3rem; margin-bottom: 0.3rem; }
+            .modal-subtitle { font-size: 0.8rem; }
+            .modal-specs { grid-template-columns: repeat(2, 1fr); padding: 0.75rem; }
+            .modal-feature-item { font-size: 0.8rem; }
+            
+            /* CONTACT FORM */
+            .contact-grid { gap: 1.5rem; }
+            .form-group select, .form-group input, .form-group textarea { font-size: 16px; }
+            
+            /* FOOTER OPTIMIZATION */
+            .footer-brand { margin-bottom: 1rem; }
+            .footer h4 { font-size: 1rem; }
+            .footer li { font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
@@ -1204,43 +1340,6 @@
             </div>
             <div class="why-img-wrap img-reveal anim-element">
                 <img class="why-img anim-zoom-parallax" src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80" alt="Mechanic inspecting vehicle">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-    <div class="container">
-        <div class="section-header centered anim-ready anim-element">
-            <span class="section-label">Our Work</span>
-            <h2>Inside <span class="accent">The Shop</span></h2>
-            <p>Quality work, clean shop, and attention to detail on every job.</p>
-        </div>
-        <div class="gallery-grid anim-stagger anim-element">
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80" alt="Engine work">
-                <div class="gallery-overlay"><h4>Engine Work</h4><p>Valve cover gasket replacement</p></div>
-            </div>
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80" alt="Brake service">
-                <div class="gallery-overlay"><h4>Brake Service</h4><p>Rotors and pads replacement</p></div>
-            </div>
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1603553329474-99f95f35394f?w=600&q=80" alt="Shop bay">
-                <div class="gallery-overlay"><h4>Our Shop</h4><p>541 Kenilworth Ave N</p></div>
-            </div>
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&q=80" alt="Suspension repair">
-                <div class="gallery-overlay"><h4>Suspension</h4><p>Struts & sway bar links</p></div>
-            </div>
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Vehicle inspection">
-                <div class="gallery-overlay"><h4>Safety Inspection</h4><p>Complete vehicle check</p></div>
-            </div>
-            <div class="gallery-item anim-scale-in">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Finished vehicle">
-                <div class="gallery-overlay"><h4>Ready for Pickup</h4><p>Another happy customer</p></div>
             </div>
         </div>
     </div>
