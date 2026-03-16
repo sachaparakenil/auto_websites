@@ -96,7 +96,7 @@
 
         /* HERO */
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80') center/cover no-repeat; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('image1.jpg') center/cover no-repeat; }
         .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,26,0.94) 0%, rgba(26,26,26,0.72) 50%, rgba(212,56,44,0.1) 100%); }
         .hero-content { position: relative; z-index: 2; max-width: 750px; padding: 8rem 2rem 4rem; margin: 0 auto 0 8%; }
         .hero-badge { display: inline-block; padding: 0.4rem 1rem; background: rgba(212,56,44,0.15); border: 1px solid rgba(212,56,44,0.3); border-radius: 50px; color: var(--primary-light); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.5rem; animation: fadeInDown 0.6s ease-out; }
@@ -1061,8 +1061,8 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#inventory">Inventory</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1110,7 +1110,53 @@
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- ABOUT -->
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header centered anim-ready anim-element">
+            <span class="section-label" id="testimonialLabel">5.0 ★ Perfect Google Rating</span>
+            <h2>What Customers <span class="accent">Say About Nick</span></h2>
+        </div>
+        <div class="testimonial-grid anim-stagger anim-element">
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"My 2015 Honda Civic needed a timing belt replacement. Three other shops quoted me $1,800+, but Nick diagnosed the job in 15 minutes and got it done for $950 with quality parts. He explained everything clearly and even helped me understand my car's maintenance schedule. Finally found a mechanic I actually trust!"</p>
+                <div class="t-author"><div class="t-avatar">A</div><div><strong>Alyssa M.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"Took my truck in for a leaking oil pan gasket and stuck thermostat. Nick diagnosed both issues immediately and had it fixed within 3 hours at a fair price—no upselling unnecessary work. What impressed me most was his honesty: he told me one repair could wait another month instead of pushing me to do it all at once. That's integrity right there."</p>
+                <div class="t-author"><div class="t-avatar">J</div><div><strong>James R.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"My 2008 Dodge Caravan's power steering rack was leaking severely. Every shop I called said it needed a $1,600 replacement. Nick spent an hour troubleshooting and found the issue was a worn seal—he fixed it for $350. That repair saved my van from the salvage yard. Nick's diagnostic skills are incredible and his problem-solving approach saved me thousands of dollars."</p>
+                <div class="t-author"><div class="t-avatar">M</div><div><strong>Mike T.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"Needed new all-season tires for my Mazda 3 and an alignment. Nick sourced quality Michelin tires at a better price than the big box stores, did a perfect alignment, and balanced everything. He even rotated my spare and didn't charge extra. The attention to detail is remarkable, and five months later my tires are wearing perfectly."</p>
+                <div class="t-author"><div class="t-avatar">S</div><div><strong>Sandra K.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"I visited 4 different shops for a brake diagnostics issue. All wanted to replace the entire brake system ($900+). Nick carefully tested everything, found a faulty brake pad sensor for $45, and advised me on preventive maintenance. He saved me $855 and showed me exactly what was happening. That's the level of expertise and honesty I was looking for."</p>
+                <div class="t-author"><div class="t-avatar">R</div><div><strong>Raj P.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+            <div class="testimonial-card anim-rotate-in">
+                <div class="stars">★★★★★</div>
+                <p>"Had my 2012 Subaru Outback for 8 years and never had consistent service I felt confident about—until I found Nick. He replaced the transmission fluid and filter, diagnosed a minor suspension issue before it became major, and provided a detailed maintenance roadmap for the next two years. His transparency and technical knowledge give me complete peace of mind."</p>
+                <div class="t-author"><div class="t-avatar">L</div><div><strong>Lisa F.</strong><span>Hamilton, ON</span></div></div>
+                <div class="review-source">Via Google Reviews</div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="about" id="about">
     <div class="container">
         <div class="about-grid">
@@ -1384,53 +1430,6 @@
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-    <div class="container">
-        <div class="section-header centered anim-ready anim-element">
-            <span class="section-label" id="testimonialLabel">5.0 ★ Perfect Google Rating</span>
-            <h2>What Customers <span class="accent">Say About Nick</span></h2>
-        </div>
-        <div class="testimonial-grid anim-stagger anim-element">
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"My 2015 Honda Civic needed a timing belt replacement. Three other shops quoted me $1,800+, but Nick diagnosed the job in 15 minutes and got it done for $950 with quality parts. He explained everything clearly and even helped me understand my car's maintenance schedule. Finally found a mechanic I actually trust!"</p>
-                <div class="t-author"><div class="t-avatar">A</div><div><strong>Alyssa M.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"Took my truck in for a leaking oil pan gasket and stuck thermostat. Nick diagnosed both issues immediately and had it fixed within 3 hours at a fair price—no upselling unnecessary work. What impressed me most was his honesty: he told me one repair could wait another month instead of pushing me to do it all at once. That's integrity right there."</p>
-                <div class="t-author"><div class="t-avatar">J</div><div><strong>James R.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"My 2008 Dodge Caravan's power steering rack was leaking severely. Every shop I called said it needed a $1,600 replacement. Nick spent an hour troubleshooting and found the issue was a worn seal—he fixed it for $350. That repair saved my van from the salvage yard. Nick's diagnostic skills are incredible and his problem-solving approach saved me thousands of dollars."</p>
-                <div class="t-author"><div class="t-avatar">M</div><div><strong>Mike T.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"Needed new all-season tires for my Mazda 3 and an alignment. Nick sourced quality Michelin tires at a better price than the big box stores, did a perfect alignment, and balanced everything. He even rotated my spare and didn't charge extra. The attention to detail is remarkable, and five months later my tires are wearing perfectly."</p>
-                <div class="t-author"><div class="t-avatar">S</div><div><strong>Sandra K.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"I visited 4 different shops for a brake diagnostics issue. All wanted to replace the entire brake system ($900+). Nick carefully tested everything, found a faulty brake pad sensor for $45, and advised me on preventive maintenance. He saved me $855 and showed me exactly what was happening. That's the level of expertise and honesty I was looking for."</p>
-                <div class="t-author"><div class="t-avatar">R</div><div><strong>Raj P.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-            <div class="testimonial-card anim-rotate-in">
-                <div class="stars">★★★★★</div>
-                <p>"Had my 2012 Subaru Outback for 8 years and never had consistent service I felt confident about—until I found Nick. He replaced the transmission fluid and filter, diagnosed a minor suspension issue before it became major, and provided a detailed maintenance roadmap for the next two years. His transparency and technical knowledge give me complete peace of mind."</p>
-                <div class="t-author"><div class="t-avatar">L</div><div><strong>Lisa F.</strong><span>Hamilton, ON</span></div></div>
-                <div class="review-source">Via Google Reviews</div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
