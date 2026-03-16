@@ -567,7 +567,11 @@
             align-items: center;
         }
         @media (max-width: 900px) {
-            .status-badge { display: none; }
+            .status-badge { display: inline-flex !important; margin-left: 0; font-size: 0.7rem; padding: 0.3rem 0.8rem; }
+            .nav-status { gap: 0.5rem; }
+        }
+        @media (max-width: 768px) {
+            .status-badge { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
         }
 
         /* ===== ENHANCEMENT 2: ANIMATED COUNTERS ===== */
@@ -1487,7 +1491,7 @@
 
 <!-- MAP -->
 <section class="map-section anim-mask-up anim-element">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.234!2d-79.8135!3d43.2635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c99746b77edc9%3A0xbc0235201cf8ddbd!2sHamilton Pro&#39;s%20Automotive%20Centre!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.5!2d-79.871!3d43.206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9a92b4e5c5c5%3A0x5c5c5c5c5c5c5c5c!2s123%20Main%20Street%2C%20Hamilton%2C%20ON%20L8V%203Z1!5e0!3m2!1sen!2sca!4v1710604800000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <!-- CTA -->
