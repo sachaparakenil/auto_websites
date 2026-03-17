@@ -202,9 +202,10 @@
         /* TESTIMONIALS */
         .testimonials { padding: 7rem 0; background: var(--light); }
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
-        .testimonial-card:nth-child(n+4) { display: none; }
-        .testimonial-card:nth-child(n+4).visible { display: block; }
+        #testimonials .testimonial-grid .testimonial-card:nth-child(n+4) { display: none !important; }
+        #testimonials .testimonial-grid .testimonial-card.show-hidden { display: block !important; }
         .load-more-reviews { display: flex; justify-content: center; margin-top: 2rem; }
+        .load-more-reviews.hidden { display: none !important; }
         .testimonial-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--light-2); transition: var(--transition); }
         .testimonial-card:hover { border-color: rgba(212,56,44,0.2); transform: translateY(-4px); box-shadow: var(--shadow); }
         .stars { color: #F5A623; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
@@ -1700,15 +1701,17 @@ quoteForm.addEventListener('submit', function(e) {
 
 // ===== LOAD MORE REVIEWS =====
 function loadMoreReviews() {
-    const cards = document.querySelectorAll('.testimonial-card:nth-child(n+4)');
+    const cards = document.querySelectorAll('#testimonials .testimonial-grid .testimonial-card:nth-child(n+4)');
+    const reviewsContainer = document.querySelector('.load-more-reviews');
     const btn = document.getElementById('loadMoreBtn');
     
+    // Show the hidden cards
     cards.forEach(card => {
-        card.classList.add('visible');
+        card.classList.add('show-hidden');
     });
     
-    // Hide the button after loading
-    btn.style.display = 'none';
+    // Hide the load more button container
+    reviewsContainer.classList.add('hidden');
     
     // Smooth scroll to show the new reviews
     setTimeout(() => {
